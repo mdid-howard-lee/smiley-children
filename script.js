@@ -104,6 +104,29 @@
 
     document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
 
+    // QR GRID PLACEHOLDER
+    const qrGrid = document.getElementById('qrGrid');
+    if (qrGrid) {
+        const cells = 15 * 15;
+        const pattern = [];
+        let seed = 1337;
+        const rand = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+        for (let i = 0; i < cells; i++) {
+            const row = Math.floor(i / 15);
+            const col = i % 15;
+            if ((row < 4 && col < 4) || (row < 4 && col > 10) || (row > 10 && col < 4)) {
+                pattern.push(false);
+                continue;
+            }
+            pattern.push(rand() > 0.5);
+        }
+        pattern.forEach(filled => {
+            const cell = document.createElement('span');
+            if (!filled) cell.style.background = 'transparent';
+            qrGrid.appendChild(cell);
+        });
+    }
+
     // SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {

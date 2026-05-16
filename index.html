@@ -36,11 +36,9 @@
         </div>
     </div>
 
-    <!-- CUSTOM CURSOR -->
     <div class="cursor cursor--dot" id="cursorDot"></div>
     <div class="cursor cursor--ring" id="cursorRing"></div>
 
-    <!-- NAV -->
     <nav class="nav" id="nav">
         <a href="#hero" class="nav__logo" data-cursor="hover">
             <span class="nav__logo-mark">BE</span>
@@ -48,7 +46,10 @@
         </a>
         <ul class="nav__links">
             <li><a href="#about" data-cursor="hover">About</a></li>
-            <li><a href="#wishlist" data-cursor="hover">Wishlist</a></li>
+            <li><a href="#features" data-cursor="hover">Features</a></li>
+            <li><a href="#story" data-cursor="hover">Story</a></li>
+            <li><a href="#characters" data-cursor="hover">Cast</a></li>
+            <li><a href="#gallery" data-cursor="hover">Gallery</a></li>
         </ul>
         <a href="#wishlist" class="nav__cta" data-cursor="hover">
             <span>Wishlist</span>
@@ -64,6 +65,11 @@
             <div class="hero__bg-grain"></div>
             <div class="hero__bg-vignette"></div>
             <div class="hero__warm-glow"></div>
+        </div>
+
+        <div class="hero__meta">
+            <span class="hero__meta-line"></span>
+            <span class="hero__meta-text">Chapter 01 · A story about silence</span>
         </div>
 
         <div class="hero__content">
@@ -85,6 +91,25 @@
             </div>
         </div>
 
+        <div class="hero__side hero__side--left">
+            <div class="hero__rotate-text">BETWEEN · EXPECTATIONS · 2026</div>
+        </div>
+
+        <div class="hero__side hero__side--right">
+            <div class="hero__detail">
+                <span class="hero__detail-label">Story by</span>
+                <span class="hero__detail-value">Hollow Window Studio</span>
+            </div>
+            <div class="hero__detail">
+                <span class="hero__detail-label">Platforms</span>
+                <span class="hero__detail-value">PC · Mac · Console</span>
+            </div>
+            <div class="hero__detail">
+                <span class="hero__detail-label">Release</span>
+                <span class="hero__detail-value">Winter 2026</span>
+            </div>
+        </div>
+
         <div class="hero__scroll" data-cursor="hover">
             <span>Scroll</span>
             <div class="hero__scroll-line"><span></span></div>
@@ -103,13 +128,14 @@
                 <div class="about__image" style="background-image: url('https://picsum.photos/seed/be-bedroom-window-rain/900/1200');">
                     <div class="about__image-overlay"></div>
                 </div>
+                <div class="about__visual-card">
+                    <span class="about__visual-card-label">Estimated playtime</span>
+                    <span class="about__visual-card-value">8 — 12 hrs</span>
+                </div>
             </div>
 
             <div class="about__copy" data-reveal="right">
-                <h2 class="section__title">
-                    A story about the words<br>
-                    we never say out loud.
-                </h2>
+                <h2 class="section__title">A story about the words<br>we never say out loud.</h2>
                 <p class="about__lead">
                     <em>Between Expectations</em> follows a teenager caught between who their parents want them to become and the dream they're afraid to name. Every dinner, every text, every silence becomes a decision.
                 </p>
@@ -120,7 +146,320 @@
         </div>
     </section>
 
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <div class="section__chrome">
+            <span class="section__number">02</span>
+            <span class="section__label">Gameplay</span>
+        </div>
+
+        <div class="features__head" data-reveal="up">
+            <h2 class="section__title">Mechanics built<br>around feeling.</h2>
+            <p class="section__sub">Six systems that let small moments echo into the rest of the story.</p>
+        </div>
+
+        <div class="features__grid">
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <path d="M6 8h14a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6l-5 4v-4H6a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2z"/>
+                        <path d="M11 14h8M11 17h5"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Choice-Based Dialogue</h3>
+                <p class="feature__desc">Every reply matters. Words land differently depending on who's listening and what came before.</p>
+                <span class="feature__index">01</span>
+            </article>
+
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <circle cx="11" cy="12" r="4"/><circle cx="21" cy="12" r="4"/>
+                        <path d="M5 24c0-3 3-5 6-5s6 2 6 5M15 24c0-3 3-5 6-5s6 2 6 5"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Relationship System</h3>
+                <p class="feature__desc">Four core bonds with their own thresholds of trust, distance, and resentment that shift in real time.</p>
+                <span class="feature__index">02</span>
+            </article>
+
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <path d="M16 6v6M16 12l-7 8M16 12l7 8"/>
+                        <circle cx="16" cy="6" r="2"/><circle cx="9" cy="22" r="2"/><circle cx="23" cy="22" r="2"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Multiple Endings</h3>
+                <p class="feature__desc">Seven distinct conclusions — none of them simply "good" or "bad." Just true to what you chose.</p>
+                <span class="feature__index">03</span>
+            </article>
+
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <path d="M6 7h14a4 4 0 0 1 4 4v15l-4-3-4 3-4-3-4 3-2-2V7z"/>
+                        <path d="M10 13h10M10 17h7"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Emotional Storytelling</h3>
+                <p class="feature__desc">A grounded script written with input from family therapists and teenagers from across three cities.</p>
+                <span class="feature__index">04</span>
+            </article>
+
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <circle cx="16" cy="16" r="10"/>
+                        <path d="M16 10v6l4 2"/>
+                        <path d="M16 4v2M16 26v2M4 16h2M26 16h2"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Daily Life Simulation</h3>
+                <p class="feature__desc">Wake up, walk to school, share a meal, lock your door. Routine carries the story between its biggest moments.</p>
+                <span class="feature__index">05</span>
+            </article>
+
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <circle cx="8" cy="10" r="3"/><circle cx="24" cy="10" r="3"/>
+                        <circle cx="8" cy="22" r="3"/><circle cx="24" cy="22" r="3"/>
+                        <circle cx="16" cy="16" r="3"/>
+                        <path d="M11 10h10M11 22h10M10 12l4 3M22 12l-4 3M10 20l4-3M22 20l-4-3"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Dynamic Interactions</h3>
+                <p class="feature__desc">Characters remember silences, broken promises, and the small kindnesses you thought no one noticed.</p>
+                <span class="feature__index">06</span>
+            </article>
+        </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story" id="story">
+        <div class="story__bg" style="background-image: url('https://picsum.photos/seed/be-rainy-city-night/1920/1200');"></div>
+        <div class="story__overlay"></div>
+
+        <div class="section__chrome section__chrome--light">
+            <span class="section__number">03</span>
+            <span class="section__label">The Story</span>
+        </div>
+
+        <div class="story__inner">
+            <div class="story__intro" data-reveal="up">
+                <h2 class="section__title section__title--light">A family,<br>in a country of small rooms.</h2>
+                <p class="story__lead">
+                    Across one autumn semester, the dinner table becomes a battlefield no one knows they're fighting. The dream is small. It's just a guitar, or just a sketchbook. But this house has never been good at small things.
+                </p>
+            </div>
+
+            <div class="story__themes">
+                <article class="theme" data-reveal="up">
+                    <div class="theme__image" style="background-image: url('https://picsum.photos/seed/be-school-corridor/800/600');"><div class="theme__image-overlay"></div></div>
+                    <div class="theme__body">
+                        <span class="theme__tag">Theme 01</span>
+                        <h3 class="theme__title">Academic Pressure</h3>
+                        <p class="theme__desc">When grades become love letters, every red mark is a rejection.</p>
+                    </div>
+                </article>
+
+                <article class="theme" data-reveal="up">
+                    <div class="theme__image" style="background-image: url('https://picsum.photos/seed/be-family-dinner-tense/800/600');"><div class="theme__image-overlay"></div></div>
+                    <div class="theme__body">
+                        <span class="theme__tag">Theme 02</span>
+                        <h3 class="theme__title">Misunderstanding</h3>
+                        <p class="theme__desc">Two people in the same room, speaking two different languages of care.</p>
+                    </div>
+                </article>
+
+                <article class="theme" data-reveal="up">
+                    <div class="theme__image" style="background-image: url('https://picsum.photos/seed/be-bedroom-dark-blue/800/600');"><div class="theme__image-overlay"></div></div>
+                    <div class="theme__body">
+                        <span class="theme__tag">Theme 03</span>
+                        <h3 class="theme__title">Emotional Distance</h3>
+                        <p class="theme__desc">A door closed for so long that no one remembers who shut it first.</p>
+                    </div>
+                </article>
+
+                <article class="theme" data-reveal="up">
+                    <div class="theme__image" style="background-image: url('https://picsum.photos/seed/be-rooftop-night-warm/800/600');"><div class="theme__image-overlay"></div></div>
+                    <div class="theme__body">
+                        <span class="theme__tag">Theme 04</span>
+                        <h3 class="theme__title">Rebuilding Trust</h3>
+                        <p class="theme__desc">It begins with a sentence that doesn't end in an argument. It begins quietly.</p>
+                    </div>
+                </article>
+            </div>
+
+            <blockquote class="story__quote" data-reveal="up">
+                <p>"I'm not asking you to be perfect. I'm asking you to come home."</p>
+                <cite>— Mother, Chapter 4</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- CAST -->
+    <section class="cast" id="characters">
+        <div class="section__chrome">
+            <span class="section__number">04</span>
+            <span class="section__label">The Cast</span>
+        </div>
+
+        <div class="features__head" data-reveal="up">
+            <h2 class="section__title">Four people.<br>One unspoken conversation.</h2>
+            <p class="section__sub">Every character carries a private weight. You will only ever see part of it.</p>
+        </div>
+
+        <div class="cast__grid">
+            <article class="character" data-reveal="up" data-cursor="hover">
+                <div class="character__portrait" style="background-image: url('https://picsum.photos/seed/be-ethan-teen-quiet/700/900');">
+                    <div class="character__portrait-overlay"></div>
+                    <span class="character__role">Protagonist</span>
+                </div>
+                <div class="character__body">
+                    <span class="character__age">16 · Eldest son</span>
+                    <h3 class="character__name">Ethan</h3>
+                    <p class="character__desc">A quiet, creative teenager who fills his sketchbook with everything he can't say out loud.</p>
+                    <div class="character__tags"><span class="tag">Introverted</span><span class="tag">Artistic</span><span class="tag">Conflicted</span></div>
+                </div>
+            </article>
+
+            <article class="character" data-reveal="up" data-cursor="hover">
+                <div class="character__portrait" style="background-image: url('https://picsum.photos/seed/be-mother-warm-tired/700/900');">
+                    <div class="character__portrait-overlay"></div>
+                    <span class="character__role">Family</span>
+                </div>
+                <div class="character__body">
+                    <span class="character__age">42 · Mother</span>
+                    <h3 class="character__name">Mother</h3>
+                    <p class="character__desc">A nurse who loves fiercely and silently, and doesn't know how to translate either anymore.</p>
+                    <div class="character__tags"><span class="tag">Caring</span><span class="tag">Tired</span><span class="tag">Distant</span></div>
+                </div>
+            </article>
+
+            <article class="character" data-reveal="up" data-cursor="hover">
+                <div class="character__portrait" style="background-image: url('https://picsum.photos/seed/be-father-strict-grey/700/900');">
+                    <div class="character__portrait-overlay"></div>
+                    <span class="character__role">Family</span>
+                </div>
+                <div class="character__body">
+                    <span class="character__age">46 · Father</span>
+                    <h3 class="character__name">Father</h3>
+                    <p class="character__desc">Believes love is preparation for a hard world. Has never once said the word "proud" out loud.</p>
+                    <div class="character__tags"><span class="tag">Strict</span><span class="tag">Driven</span><span class="tag">Closed-off</span></div>
+                </div>
+            </article>
+
+            <article class="character" data-reveal="up" data-cursor="hover">
+                <div class="character__portrait" style="background-image: url('https://picsum.photos/seed/be-bestfriend-warm-smile/700/900');">
+                    <div class="character__portrait-overlay"></div>
+                    <span class="character__role">Friend</span>
+                </div>
+                <div class="character__body">
+                    <span class="character__age">17 · Best friend</span>
+                    <h3 class="character__name">Maya</h3>
+                    <p class="character__desc">Waits outside the school gates. Sees Ethan clearer than anyone — and refuses to let him disappear.</p>
+                    <div class="character__tags"><span class="tag">Loyal</span><span class="tag">Honest</span><span class="tag">Encouraging</span></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="section__chrome">
+            <span class="section__number">05</span>
+            <span class="section__label">Screenshots</span>
+        </div>
+
+        <div class="features__head" data-reveal="up">
+            <h2 class="section__title">Quiet moments,<br>captured in cinema.</h2>
+            <p class="section__sub">Scenes from the autumn semester. Each one is a choice waiting to happen.</p>
+        </div>
+
+        <div class="gallery__grid">
+            <figure class="shot shot--tall" data-reveal="up" data-cursor="hover">
+                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-dinner-argue/1000/1400');"></div>
+                <figcaption class="shot__caption"><span class="shot__num">01</span><span class="shot__title">The Dinner Argument</span></figcaption>
+            </figure>
+            <figure class="shot" data-reveal="up" data-cursor="hover">
+                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-texting-ui/1000/800');"></div>
+                <figcaption class="shot__caption"><span class="shot__num">02</span><span class="shot__title">Texting Choices</span></figcaption>
+            </figure>
+            <figure class="shot" data-reveal="up" data-cursor="hover">
+                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-school-hallway/1000/800');"></div>
+                <figcaption class="shot__caption"><span class="shot__num">03</span><span class="shot__title">Empty Corridor</span></figcaption>
+            </figure>
+            <figure class="shot shot--wide" data-reveal="up" data-cursor="hover">
+                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-rooftop-night/1400/800');"></div>
+                <figcaption class="shot__caption"><span class="shot__num">04</span><span class="shot__title">Rooftop, 11:42 PM</span></figcaption>
+            </figure>
+            <figure class="shot" data-reveal="up" data-cursor="hover">
+                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-bedroom-emotional/1000/800');"></div>
+                <figcaption class="shot__caption"><span class="shot__num">05</span><span class="shot__title">The Locked Door</span></figcaption>
+            </figure>
+            <figure class="shot" data-reveal="up" data-cursor="hover">
+                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-kitchen-morning/1000/800');"></div>
+                <figcaption class="shot__caption"><span class="shot__num">06</span><span class="shot__title">Morning, Unspoken</span></figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- WISHLIST CTA -->
+    <section class="cta" id="wishlist">
+        <div class="cta__bg" style="background-image: url('https://picsum.photos/seed/be-cta-warmlight-window/1920/1000');"></div>
+        <div class="cta__overlay"></div>
+        <div class="cta__inner" data-reveal="up">
+            <span class="cta__eyebrow">Winter 2026</span>
+            <h2 class="cta__title">The conversation<br>is almost ready.</h2>
+            <p class="cta__sub">Wishlist <em>Between Expectations</em> and we'll let you know when the door opens.</p>
+            <div class="cta__buttons">
+                <a href="#" class="btn btn--primary" data-cursor="hover">
+                    <span class="btn__label">Wishlist on Steam</span>
+                    <span class="btn__sub">Free demo at launch</span>
+                </a>
+                <a href="#" class="btn btn--ghost" data-cursor="hover">
+                    <span>Join the Newsletter</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__col footer__col--brand">
+                <div class="footer__logo">
+                    <span class="footer__logo-mark">BE</span>
+                    <div>
+                        <span class="footer__logo-title">Between Expectations</span>
+                        <span class="footer__logo-sub">A Hollow Window Studio project</span>
+                    </div>
+                </div>
+                <p class="footer__about">A narrative roleplay simulation about the silences between the people we love.</p>
+            </div>
+
+            <div class="footer__col">
+                <span class="footer__heading">Game</span>
+                <ul class="footer__list">
+                    <li><a href="#about" data-cursor="hover">About</a></li>
+                    <li><a href="#features" data-cursor="hover">Features</a></li>
+                    <li><a href="#story" data-cursor="hover">The Story</a></li>
+                    <li><a href="#characters" data-cursor="hover">Cast</a></li>
+                    <li><a href="#gallery" data-cursor="hover">Screenshots</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col footer__col--qr">
+                <span class="footer__heading">Mobile Demo</span>
+                <p class="footer__qr-desc">Scan to be notified when the demo arrives.</p>
+                <div class="footer__qr" aria-label="QR code placeholder">
+                    <div class="footer__qr-grid" id="qrGrid"></div>
+                </div>
+            </div>
+        </div>
+
         <div class="footer__bottom">
             <div class="footer__bottom-left">
                 <span class="footer__release">Coming Soon · 2026</span>
@@ -128,6 +467,8 @@
                 <span>© 2026 Hollow Window Studio</span>
             </div>
         </div>
+
+        <div class="footer__wordmark">EXPECTATIONS</div>
     </footer>
 
     <script src="script.js"></script>
