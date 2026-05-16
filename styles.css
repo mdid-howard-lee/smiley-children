@@ -172,7 +172,11 @@ button, input { font: inherit; cursor: none; }
     animation: iconPop 0.9s var(--ease) 0.5s forwards;
 }
 
-.loader__icon svg {
+.loader__icon svg,
+.loader__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     animation: iconWobble 4s ease-in-out infinite;
 }
 
@@ -496,7 +500,8 @@ button, input { font: inherit; cursor: none; }
     transition: transform 0.4s var(--ease);
 }
 
-.nav__logo-mark svg { width: 100%; height: 100%; }
+.nav__logo-mark svg,
+.nav__logo-mark img { width: 100%; height: 100%; object-fit: contain; }
 
 .nav__logo:hover .nav__logo-mark { transform: rotate(-12deg) scale(1.08); }
 
@@ -674,10 +679,12 @@ button, input { font: inherit; cursor: none; }
     height: clamp(80px, 10vw, 130px);
 }
 
+.hero__logo-icon img,
 .hero__logo-icon svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 30px rgba(184, 54, 46, 0.4));
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(184, 54, 46, 0.45)) drop-shadow(0 6px 20px rgba(0, 0, 0, 0.6));
     animation: iconWobble 6s ease-in-out infinite;
 }
 
@@ -2148,7 +2155,8 @@ button, input { font: inherit; cursor: none; }
     justify-content: center;
 }
 
-.footer__logo-mark svg { width: 100%; height: 100%; }
+.footer__logo-mark svg,
+.footer__logo-mark img { width: 100%; height: 100%; object-fit: contain; }
 
 .footer__logo-title {
     display: block;
