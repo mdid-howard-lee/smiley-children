@@ -46,8 +46,9 @@
         </a>
         <ul class="nav__links">
             <li><a href="#about" data-cursor="hover">About</a></li>
+            <li><a href="#choose" data-cursor="hover">Choose</a></li>
             <li><a href="#features" data-cursor="hover">Features</a></li>
-            <li><a href="#story" data-cursor="hover">Story</a></li>
+            <li><a href="#systems" data-cursor="hover">Systems</a></li>
             <li><a href="#characters" data-cursor="hover">Cast</a></li>
             <li><a href="#gallery" data-cursor="hover">Gallery</a></li>
         </ul>
@@ -78,7 +79,7 @@
                 <span class="hero__title-line">Between</span>
                 <span class="hero__title-line hero__title-line--accent">Expectations</span>
             </h1>
-            <p class="hero__tagline">Every choice shapes your family.</p>
+            <p class="hero__tagline">A son who wants to sing. A daughter who wants to paint. Parents who said no.</p>
             <div class="hero__actions">
                 <a href="#wishlist" class="btn btn--primary" data-cursor="hover">
                     <span class="btn__label">Coming Soon</span>
@@ -135,14 +136,99 @@
             </div>
 
             <div class="about__copy" data-reveal="right">
-                <h2 class="section__title">A story about the words<br>we never say out loud.</h2>
+                <h2 class="section__title">Improve the family.<br>Earn the right<br><em>to be heard.</em></h2>
                 <p class="about__lead">
-                    <em>Between Expectations</em> follows a teenager caught between who their parents want them to become and the dream they're afraid to name. Every dinner, every text, every silence becomes a decision.
+                    <em>Between Expectations</em> is a roleplay simulation about a teenager with a dream their parents refuse to accept. You play as either the son — who wants to be a singer — or the daughter — who wants to be an artist. Only one. The other lives a story you'll never see.
                 </p>
                 <p class="about__body">
-                    A narrative roleplay simulation about communication, trust, and the long quiet weight of family. Speak honestly, lie to keep the peace, or say nothing at all — your dialogue choices reshape relationships and lead to one of <strong>seven possible endings</strong>.
+                    Across one autumn semester, you'll rebuild trust in a household that's forgotten how to listen. Bank <strong>Smiley Coins</strong> for every small kindness. Switch between first and third person at will. Take on side quests. And when you finally raise the subject of your dream, your parents will remember everything you've done.
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- CHARACTER SELECT -->
+    <section class="choose" id="choose">
+        <div class="section__chrome">
+            <span class="section__number">02</span>
+            <span class="section__label">Choose Your Story</span>
+        </div>
+
+        <div class="choose__head" data-reveal="up">
+            <h2 class="section__title">Two children.<br>One impossible conversation.</h2>
+            <p class="section__sub">Pick one. The other's story isn't told — that's the point.</p>
+        </div>
+
+        <div class="choose__grid">
+            <article class="pick pick--son" data-reveal="up" data-cursor="hover">
+                <div class="pick__portrait" style="background-image: url('https://picsum.photos/seed/be-son-singer-warm/900/1100');">
+                    <div class="pick__portrait-overlay"></div>
+                    <span class="pick__badge">Playable · Path A</span>
+                </div>
+                <div class="pick__body">
+                    <div class="pick__head">
+                        <div>
+                            <span class="pick__role">The Son</span>
+                            <h3 class="pick__name">Ethan</h3>
+                        </div>
+                        <div class="pick__dream-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+                                <rect x="13" y="4" width="6" height="14" rx="3"/>
+                                <path d="M9 16a7 7 0 0 0 14 0M16 23v5M11 28h10"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="pick__dream"><span>Dream:</span> Become a singer.</p>
+                    <p class="pick__desc">Plays guitar in his closet so no one hears. Records demos at 2 a.m. into a phone. His father wants him to be a doctor.</p>
+                    <div class="pick__stats">
+                        <div class="stat"><span class="stat__label">Empathy</span><div class="stat__bar"><span style="--w: 78%"></span></div></div>
+                        <div class="stat"><span class="stat__label">Defiance</span><div class="stat__bar"><span style="--w: 55%"></span></div></div>
+                        <div class="stat"><span class="stat__label">Self-doubt</span><div class="stat__bar"><span style="--w: 82%"></span></div></div>
+                    </div>
+                    <button class="pick__cta" data-cursor="hover">
+                        <span>Play as Ethan</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </button>
+                </div>
+            </article>
+
+            <div class="choose__divider">
+                <span class="choose__divider-text">OR</span>
+                <span class="choose__divider-sub">Choose one. Only one.</span>
+            </div>
+
+            <article class="pick pick--daughter" data-reveal="up" data-cursor="hover">
+                <div class="pick__portrait" style="background-image: url('https://picsum.photos/seed/be-daughter-artist-warm/900/1100');">
+                    <div class="pick__portrait-overlay"></div>
+                    <span class="pick__badge">Playable · Path B</span>
+                </div>
+                <div class="pick__body">
+                    <div class="pick__head">
+                        <div>
+                            <span class="pick__role">The Daughter</span>
+                            <h3 class="pick__name">Mira</h3>
+                        </div>
+                        <div class="pick__dream-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+                                <path d="M4 28l8-8"/>
+                                <path d="M10 22l4-4 6 6-4 4z"/>
+                                <path d="M16 16l8-8a3 3 0 0 1 4 4l-8 8z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="pick__dream"><span>Dream:</span> Become an artist.</p>
+                    <p class="pick__desc">Fills the margins of math notes with charcoal portraits. Keeps a locked sketchbook beneath a loose floorboard. Her mother calls art a hobby.</p>
+                    <div class="pick__stats">
+                        <div class="stat"><span class="stat__label">Imagination</span><div class="stat__bar"><span style="--w: 88%"></span></div></div>
+                        <div class="stat"><span class="stat__label">Resolve</span><div class="stat__bar"><span style="--w: 64%"></span></div></div>
+                        <div class="stat"><span class="stat__label">Quiet rage</span><div class="stat__bar"><span style="--w: 71%"></span></div></div>
+                    </div>
+                    <button class="pick__cta" data-cursor="hover">
+                        <span>Play as Mira</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </button>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -233,6 +319,139 @@
                 <p class="feature__desc">Characters remember silences, broken promises, and the small kindnesses you thought no one noticed.</p>
                 <span class="feature__index">06</span>
             </article>
+        </div>
+    </section>
+
+    <!-- SYSTEMS DEEP-DIVE -->
+    <section class="systems" id="systems">
+        <div class="section__chrome">
+            <span class="section__number">04</span>
+            <span class="section__label">Inside the Game</span>
+        </div>
+
+        <div class="features__head" data-reveal="up">
+            <h2 class="section__title">Three systems.<br>One quiet conversation.</h2>
+            <p class="section__sub">The pieces that make Between Expectations feel less like a game and more like a life you're trying to fix.</p>
+        </div>
+
+        <!-- POV -->
+        <div class="system" data-reveal="up">
+            <div class="system__copy">
+                <span class="system__tag">System · 01</span>
+                <h3 class="system__title">Perspective Switch</h3>
+                <p class="system__lead">See through their eyes — or watch from the doorway.</p>
+                <p class="system__desc">Press a button and the camera changes its mind. First person for the moments that hurt; third person for the moments you need to see from the outside.</p>
+                <div class="system__chips">
+                    <span class="chip"><span class="chip__dot"></span> Switch anytime</span>
+                    <span class="chip"><span class="chip__dot"></span> Cinematic 3rd person</span>
+                    <span class="chip"><span class="chip__dot"></span> Intimate 1st person</span>
+                </div>
+            </div>
+            <div class="system__visual system__visual--pov">
+                <div class="pov__frame pov__frame--first">
+                    <div class="pov__image" style="background-image: url('https://picsum.photos/seed/be-pov-first-person/900/700');"></div>
+                    <div class="pov__overlay"></div>
+                    <span class="pov__label">First Person</span>
+                </div>
+                <div class="pov__frame pov__frame--third">
+                    <div class="pov__image" style="background-image: url('https://picsum.photos/seed/be-pov-third-person/900/700');"></div>
+                    <div class="pov__overlay"></div>
+                    <span class="pov__label">Third Person</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SMILEY COINS -->
+        <div class="system system--reverse" data-reveal="up">
+            <div class="system__visual system__visual--coins">
+                <div class="coin coin--lg">
+                    <svg viewBox="0 0 100 100" fill="none">
+                        <defs>
+                            <radialGradient id="coinGrad" cx="35%" cy="30%">
+                                <stop offset="0%" stop-color="#ffd9a8"/>
+                                <stop offset="60%" stop-color="#ff9842"/>
+                                <stop offset="100%" stop-color="#cc6a1c"/>
+                            </radialGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="44" fill="url(#coinGrad)" stroke="#ffe3c2" stroke-width="1.5"/>
+                        <circle cx="38" cy="42" r="3.5" fill="#3a1f08"/>
+                        <circle cx="62" cy="42" r="3.5" fill="#3a1f08"/>
+                        <path d="M34 58 Q50 72 66 58" stroke="#3a1f08" stroke-width="4" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </div>
+                <div class="coin__glow"></div>
+            </div>
+            <div class="system__copy">
+                <span class="system__tag">System · 02</span>
+                <h3 class="system__title">Smiley Coins</h3>
+                <p class="system__lead">The currency of small kindnesses.</p>
+                <p class="system__desc">Every time you do something good — answer honestly, help with the dishes, remember an anniversary — the game gives you a Smiley Coin. Spend them when it counts.</p>
+                <div class="coin-grid">
+                    <div class="coin-grid__col">
+                        <span class="coin-grid__heading">Earn from</span>
+                        <ul class="coin-grid__list">
+                            <li><span class="coin-grid__plus">+</span> Honest dialogue choices</li>
+                            <li><span class="coin-grid__plus">+</span> Helping at home</li>
+                            <li><span class="coin-grid__plus">+</span> Completing side quests</li>
+                        </ul>
+                    </div>
+                    <div class="coin-grid__col">
+                        <span class="coin-grid__heading">Spend on</span>
+                        <ul class="coin-grid__list">
+                            <li><span class="coin-grid__minus">→</span> Heart-to-heart moments</li>
+                            <li><span class="coin-grid__minus">→</span> Gifts for family</li>
+                            <li><span class="coin-grid__minus">→</span> Persuasion attempts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDE QUESTS -->
+        <div class="system" data-reveal="up">
+            <div class="system__copy">
+                <span class="system__tag">System · 03</span>
+                <h3 class="system__title">Side Quests</h3>
+                <p class="system__lead">Smaller stories that change everything.</p>
+                <p class="system__desc">Between scripted scenes, the world is full of quiet errands. A friend needs cover for an audition. Dad lost an old vinyl ten years ago. Each one teaches your family something about you.</p>
+                <div class="system__chips">
+                    <span class="chip"><span class="chip__dot"></span> Optional</span>
+                    <span class="chip"><span class="chip__dot"></span> Smiley Coins</span>
+                    <span class="chip"><span class="chip__dot"></span> Relationship shifts</span>
+                </div>
+            </div>
+            <div class="system__visual system__visual--quests">
+                <div class="quest-log">
+                    <div class="quest-log__head">
+                        <span class="quest-log__title">Active Quests</span>
+                        <span class="quest-log__count">04 / 12</span>
+                    </div>
+                    <div class="quest">
+                        <div class="quest__body">
+                            <div class="quest__row"><span class="quest__name">Cover Mom's night shift</span><span class="quest__reward">+12</span></div>
+                            <span class="quest__tag">Family · Mother</span>
+                        </div>
+                    </div>
+                    <div class="quest">
+                        <div class="quest__body">
+                            <div class="quest__row"><span class="quest__name">Find Dad's old vinyl records</span><span class="quest__reward">+18</span></div>
+                            <span class="quest__tag">Family · Father</span>
+                        </div>
+                    </div>
+                    <div class="quest">
+                        <div class="quest__body">
+                            <div class="quest__row"><span class="quest__name">Help Maya nail their audition</span><span class="quest__reward">+15</span></div>
+                            <span class="quest__tag">Friends</span>
+                        </div>
+                    </div>
+                    <div class="quest quest--locked">
+                        <div class="quest__body">
+                            <div class="quest__row"><span class="quest__name">The conversation you've been avoiding</span><span class="quest__reward">??</span></div>
+                            <span class="quest__tag">Requires 40+ Smiley Coins</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
