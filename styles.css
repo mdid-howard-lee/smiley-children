@@ -704,12 +704,10 @@ button, input { font: inherit; cursor: none; }
 .hero__title-line:nth-child(2) { animation-delay: 0.75s; }
 
 .hero__title-line--accent {
-    color: var(--gold-200);
-    background: linear-gradient(180deg, var(--gold-100) 0%, var(--gold-300) 50%, var(--gold-400) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 30px rgba(232, 160, 28, 0.3));
+    color: var(--gold-300);
+    text-shadow:
+        0 0 40px rgba(232, 160, 28, 0.45),
+        0 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 @keyframes heroLineIn {
