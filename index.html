@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Between Expectations — a narrative roleplay simulation about family, communication, and the choices that shape who we become.">
-    <title>Between Expectations — A Narrative Roleplay Experience</title>
+    <meta name="description" content="Smiley Children — a roleplay simulation about a child, a parent, and the dream between them. Please your parents, but don't lose yourself.">
+    <title>Smiley Children — Choose Your Character, Choose Your Path</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Special+Elite&family=Caveat:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,44 +16,77 @@
     <div class="loader" id="loader">
         <div class="loader__inner">
             <div class="loader__brand">
-                <span class="loader__sub">An indie narrative experience</span>
+                <span class="loader__sub">A roleplay simulation</span>
                 <h1 class="loader__title">
                     <span class="loader__word">
-                        <span class="loader__char" style="--i:0">B</span><span class="loader__char" style="--i:1">e</span><span class="loader__char" style="--i:2">t</span><span class="loader__char" style="--i:3">w</span><span class="loader__char" style="--i:4">e</span><span class="loader__char" style="--i:5">e</span><span class="loader__char" style="--i:6">n</span>
+                        <span class="loader__char" style="--i:0">S</span>
+                        <span class="loader__char" style="--i:1">m</span>
+                        <span class="loader__char" style="--i:2">i</span>
+                        <span class="loader__char" style="--i:3">l</span>
+                        <span class="loader__char" style="--i:4">e</span>
+                        <span class="loader__char" style="--i:5">y</span>
+                    </span>
+                    <span class="loader__icon" aria-hidden="true">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="32" fill="none" stroke="#f4ecd8" stroke-width="2.5"/>
+                            <ellipse cx="40" cy="44" rx="2.5" ry="4" fill="#f4ecd8"/>
+                            <ellipse cx="60" cy="44" rx="2.5" ry="4" fill="#f4ecd8"/>
+                            <path d="M35 56 Q50 70 65 56" stroke="#f4ecd8" stroke-width="3" stroke-linecap="round" fill="none"/>
+                            <circle cx="50" cy="50" r="42" fill="none" stroke="#b8362e" stroke-width="5"/>
+                            <line x1="22" y1="22" x2="78" y2="78" stroke="#b8362e" stroke-width="5" stroke-linecap="round"/>
+                        </svg>
                     </span>
                     <span class="loader__word">
-                        <span class="loader__char" style="--i:7">E</span><span class="loader__char" style="--i:8">x</span><span class="loader__char" style="--i:9">p</span><span class="loader__char" style="--i:10">e</span><span class="loader__char" style="--i:11">c</span><span class="loader__char" style="--i:12">t</span><span class="loader__char" style="--i:13">a</span><span class="loader__char" style="--i:14">t</span><span class="loader__char" style="--i:15">i</span><span class="loader__char" style="--i:16">o</span><span class="loader__char" style="--i:17">n</span><span class="loader__char" style="--i:18">s</span>
+                        <span class="loader__char" style="--i:7">C</span>
+                        <span class="loader__char" style="--i:8">h</span>
+                        <span class="loader__char" style="--i:9">i</span>
+                        <span class="loader__char" style="--i:10">l</span>
+                        <span class="loader__char" style="--i:11">d</span>
+                        <span class="loader__char" style="--i:12">r</span>
+                        <span class="loader__char" style="--i:13">e</span>
+                        <span class="loader__char" style="--i:14">n</span>
                     </span>
                 </h1>
                 <div class="loader__progress">
                     <div class="loader__progress-bar" id="loaderBar"></div>
                 </div>
                 <div class="loader__status">
-                    <span id="loaderStatus">Preparing the story</span>
+                    <span id="loaderStatus">Opening the front door</span>
                     <span id="loaderPercent">0%</span>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- CUSTOM CURSOR -->
     <div class="cursor cursor--dot" id="cursorDot"></div>
     <div class="cursor cursor--ring" id="cursorRing"></div>
 
+    <!-- NAV -->
     <nav class="nav" id="nav">
         <a href="#hero" class="nav__logo" data-cursor="hover">
-            <span class="nav__logo-mark">BE</span>
-            <span class="nav__logo-text">Between Expectations</span>
+            <span class="nav__logo-mark" aria-hidden="true">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="32" fill="none" stroke="#f4ecd8" stroke-width="3"/>
+                    <ellipse cx="40" cy="44" rx="2.5" ry="4" fill="#f4ecd8"/>
+                    <ellipse cx="60" cy="44" rx="2.5" ry="4" fill="#f4ecd8"/>
+                    <path d="M35 56 Q50 70 65 56" stroke="#f4ecd8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="#b8362e" stroke-width="6"/>
+                    <line x1="22" y1="22" x2="78" y2="78" stroke="#b8362e" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <span class="nav__logo-text">Smiley Children</span>
         </a>
         <ul class="nav__links">
             <li><a href="#about" data-cursor="hover">About</a></li>
-            <li><a href="#choose" data-cursor="hover">Choose</a></li>
-            <li><a href="#features" data-cursor="hover">Features</a></li>
-            <li><a href="#systems" data-cursor="hover">Systems</a></li>
-            <li><a href="#characters" data-cursor="hover">Cast</a></li>
-            <li><a href="#gallery" data-cursor="hover">Gallery</a></li>
+            <li><a href="#choose" data-cursor="hover">Characters</a></li>
+            <li><a href="#item" data-cursor="hover">Item</a></li>
+            <li><a href="#demo" data-cursor="hover">Demo</a></li>
+            <li><a href="#location" data-cursor="hover">Location</a></li>
+            <li><a href="#download" data-cursor="hover">Download</a></li>
         </ul>
-        <a href="#wishlist" class="nav__cta" data-cursor="hover">
-            <span>Wishlist</span>
+        <a href="https://mdid-howard-lee.github.io/smiley-children/" target="_blank" rel="noopener" class="nav__cta" data-cursor="hover">
+            <span>Play Now</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
     </nav>
@@ -61,53 +94,66 @@
     <!-- HERO -->
     <section class="hero" id="hero">
         <div class="hero__bg">
-            <div class="hero__bg-image" style="background-image: url('https://picsum.photos/seed/be-hallway-warmlight/1920/1200');"></div>
-            <div class="hero__bg-overlay"></div>
+            <div class="hero__bg-texture"></div>
             <div class="hero__bg-grain"></div>
             <div class="hero__bg-vignette"></div>
-            <div class="hero__warm-glow"></div>
+            <div class="hero__bg-rain"></div>
         </div>
 
         <div class="hero__meta">
             <span class="hero__meta-line"></span>
-            <span class="hero__meta-text">Chapter 01 · A story about silence</span>
+            <span class="hero__meta-text">A roleplay simulation · 2026</span>
         </div>
 
         <div class="hero__content">
-            <span class="hero__eyebrow">Narrative Roleplay Simulation</span>
+            <div class="hero__logo-block">
+                <span class="hero__logo-icon" aria-hidden="true">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="30" fill="none" stroke="#f4ecd8" stroke-width="3"/>
+                        <ellipse cx="40" cy="44" rx="2.8" ry="4.2" fill="#f4ecd8"/>
+                        <ellipse cx="60" cy="44" rx="2.8" ry="4.2" fill="#f4ecd8"/>
+                        <path d="M34 56 Q50 72 66 56" stroke="#f4ecd8" stroke-width="4" stroke-linecap="round" fill="none"/>
+                        <circle cx="50" cy="50" r="42" fill="none" stroke="#b8362e" stroke-width="7"/>
+                        <line x1="20" y1="20" x2="80" y2="80" stroke="#b8362e" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </span>
+            </div>
+
             <h1 class="hero__title">
-                <span class="hero__title-line">Between</span>
-                <span class="hero__title-line hero__title-line--accent">Expectations</span>
+                <span class="hero__title-line">Smiley</span>
+                <span class="hero__title-line hero__title-line--accent">Children</span>
             </h1>
-            <p class="hero__tagline">A son who wants to sing. A daughter who wants to paint. Parents who said no.</p>
+            <p class="hero__tagline">Choose your character, choose your path.</p>
+            <p class="hero__sub">Singer or artist? Son or daughter?</p>
             <div class="hero__actions">
-                <a href="#wishlist" class="btn btn--primary" data-cursor="hover">
-                    <span class="btn__label">Coming Soon</span>
-                    <span class="btn__sub">Wishlist on Steam</span>
+                <a href="https://mdid-howard-lee.github.io/smiley-children/" target="_blank" rel="noopener" class="btn btn--primary" data-cursor="hover">
+                    <span class="btn__label">Play the Game</span>
+                    <span class="btn__sub">Free · In Browser</span>
+                    <span class="btn__glow"></span>
                 </a>
-                <a href="#about" class="btn btn--ghost" data-cursor="hover">
+                <a href="#choose" class="btn btn--ghost" data-cursor="hover">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-                    <span>Watch Trailer</span>
+                    <span>Choose a Story</span>
                 </a>
             </div>
         </div>
 
         <div class="hero__side hero__side--left">
-            <div class="hero__rotate-text">BETWEEN · EXPECTATIONS · 2026</div>
+            <div class="hero__rotate-text">SMILEY · CHILDREN · 2026</div>
         </div>
 
         <div class="hero__side hero__side--right">
             <div class="hero__detail">
-                <span class="hero__detail-label">Story by</span>
-                <span class="hero__detail-value">Hollow Window Studio</span>
+                <span class="hero__detail-label">Genre</span>
+                <span class="hero__detail-value">Roleplay · Simulation</span>
             </div>
             <div class="hero__detail">
-                <span class="hero__detail-label">Platforms</span>
-                <span class="hero__detail-value">PC · Mac · Console</span>
+                <span class="hero__detail-label">Perspective</span>
+                <span class="hero__detail-value">1st & 3rd Person</span>
             </div>
             <div class="hero__detail">
-                <span class="hero__detail-label">Release</span>
-                <span class="hero__detail-value">Winter 2026</span>
+                <span class="hero__detail-label">Status</span>
+                <span class="hero__detail-value">Playable Now</span>
             </div>
         </div>
 
@@ -126,266 +172,202 @@
 
         <div class="about__grid">
             <div class="about__visual" data-reveal="left">
-                <div class="about__image" style="background-image: url('https://picsum.photos/seed/be-bedroom-window-rain/900/1200');">
+                <div class="about__image" style="background-image: url('assets/son.png');">
                     <div class="about__image-overlay"></div>
                 </div>
-                <div class="about__visual-card">
-                    <span class="about__visual-card-label">Estimated playtime</span>
-                    <span class="about__visual-card-value">8 — 12 hrs</span>
+                <div class="about__bubble about__bubble--card">
+                    <span class="about__bubble-label">Playtime</span>
+                    <span class="about__bubble-value">A semester. Or just an evening.</span>
                 </div>
+                <div class="about__visual-tag drip">PLEASANT HOUSE, UNPLEASANT HOME</div>
             </div>
 
             <div class="about__copy" data-reveal="right">
-                <h2 class="section__title">Improve the family.<br>Earn the right<br><em>to be heard.</em></h2>
+                <h2 class="section__title drip">Please your<br>parents,<br><span class="accent">but don't<br>lose yourself.</span></h2>
                 <p class="about__lead">
-                    <em>Between Expectations</em> is a roleplay simulation about a teenager with a dream their parents refuse to accept. You play as either the son — who wants to be a singer — or the daughter — who wants to be an artist. Only one. The other lives a story you'll never see.
+                    <em>Smiley Children</em> is a roleplay simulation about a teenager with a dream their parents refuse to accept. Play as the son who wants to sing, or the daughter who wants to draw — only one. The other lives a story you'll never see.
                 </p>
                 <p class="about__body">
-                    Across one autumn semester, you'll rebuild trust in a household that's forgotten how to listen. Bank <strong>Smiley Coins</strong> for every small kindness. Switch between first and third person at will. Take on side quests. And when you finally raise the subject of your dream, your parents will remember everything you've done.
+                    You'll fight for your dream while maintaining a healthy relationship with the people you love. Every choice shifts the balance. Every small kindness fills your pocket with <strong>Smiley Coins</strong> — the currency of warmth, the price of being heard.
                 </p>
+                <ul class="about__list">
+                    <li><span class="about__list-dot"></span> Choose son <em>or</em> daughter — singer or artist</li>
+                    <li><span class="about__list-dot"></span> Improve family bonds, earn Smiley Coins</li>
+                    <li><span class="about__list-dot"></span> Side quests, switchable POV, dialogue choices</li>
+                    <li><span class="about__list-dot"></span> Multiple endings shaped by trust and timing</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- CHARACTER SELECT -->
+    <!-- CHOOSE YOUR CHARACTER -->
     <section class="choose" id="choose">
         <div class="section__chrome">
             <span class="section__number">02</span>
-            <span class="section__label">Choose Your Story</span>
+            <span class="section__label">Characters</span>
         </div>
 
         <div class="choose__head" data-reveal="up">
-            <h2 class="section__title">Two children.<br>One impossible conversation.</h2>
-            <p class="section__sub">Pick one. The other's story isn't told — that's the point.</p>
+            <h2 class="section__title drip">Choose your<br>character.<br><span class="accent">Choose your path.</span></h2>
+            <p class="section__sub">Two children. Two unspoken dreams. Same impossible conversation. Pick one — the other's story will never be told.</p>
         </div>
 
         <div class="choose__grid">
-            <article class="pick pick--son" data-reveal="up" data-cursor="hover">
-                <div class="pick__portrait" style="background-image: url('https://picsum.photos/seed/be-son-singer-warm/900/1100');">
+            <article class="pick pick--son" data-pick="son" data-reveal="up" data-cursor="hover">
+                <div class="pick__portrait">
+                    <img src="assets/son.png" alt="The son — a teenager in a green hoodie sitting on a bench in the rain.">
                     <div class="pick__portrait-overlay"></div>
                     <span class="pick__badge">Playable · Path A</span>
                 </div>
+
                 <div class="pick__body">
                     <div class="pick__head">
                         <div>
                             <span class="pick__role">The Son</span>
-                            <h3 class="pick__name">Ethan</h3>
+                            <h3 class="pick__name">The Singer</h3>
                         </div>
                         <div class="pick__dream-icon" aria-hidden="true">
-                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <rect x="13" y="4" width="6" height="14" rx="3"/>
                                 <path d="M9 16a7 7 0 0 0 14 0M16 23v5M11 28h10"/>
                             </svg>
                         </div>
                     </div>
-                    <p class="pick__dream"><span>Dream:</span> Become a singer.</p>
-                    <p class="pick__desc">Plays guitar in his closet so no one hears. Records demos at 2 a.m. into a phone. His father wants him to be a doctor.</p>
-                    <div class="pick__stats">
-                        <div class="stat"><span class="stat__label">Empathy</span><div class="stat__bar"><span style="--w: 78%"></span></div></div>
-                        <div class="stat"><span class="stat__label">Defiance</span><div class="stat__bar"><span style="--w: 55%"></span></div></div>
-                        <div class="stat"><span class="stat__label">Self-doubt</span><div class="stat__bar"><span style="--w: 82%"></span></div></div>
+
+                    <div class="bubble bubble--maroon">
+                        <p>He wants to become a singer. But his parents don't support this hobby.</p>
                     </div>
-                    <button class="pick__cta" data-cursor="hover">
-                        <span>Play as Ethan</span>
+
+                    <div class="pick__attrs">
+                        <div class="attr">
+                            <span class="attr__label">Hobby</span>
+                            <span class="attr__value">Music · Sing</span>
+                        </div>
+                        <div class="attr">
+                            <span class="attr__label">Personality</span>
+                            <span class="attr__value">Shy · Fails to express emotions</span>
+                        </div>
+                    </div>
+
+                    <div class="pick__stats">
+                        <div class="stat">
+                            <span class="stat__label">Empathy</span>
+                            <div class="stat__bar"><span style="--w: 78%"></span></div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__label">Defiance</span>
+                            <div class="stat__bar"><span style="--w: 55%"></span></div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__label">Self-doubt</span>
+                            <div class="stat__bar"><span style="--w: 82%"></span></div>
+                        </div>
+                    </div>
+
+                    <a href="https://mdid-howard-lee.github.io/smiley-children/" target="_blank" rel="noopener" class="pick__cta" data-cursor="hover">
+                        <span>Play as the Son</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </button>
+                    </a>
                 </div>
             </article>
 
             <div class="choose__divider">
-                <span class="choose__divider-text">OR</span>
+                <span class="choose__divider-text drip">OR</span>
                 <span class="choose__divider-sub">Choose one. Only one.</span>
             </div>
 
-            <article class="pick pick--daughter" data-reveal="up" data-cursor="hover">
-                <div class="pick__portrait" style="background-image: url('https://picsum.photos/seed/be-daughter-artist-warm/900/1100');">
+            <article class="pick pick--daughter" data-pick="daughter" data-reveal="up" data-cursor="hover">
+                <div class="pick__portrait">
+                    <img src="assets/daughter.png" alt="The daughter — a teenager in a purple sweater holding a sketchbook on a bench.">
                     <div class="pick__portrait-overlay"></div>
                     <span class="pick__badge">Playable · Path B</span>
                 </div>
+
                 <div class="pick__body">
                     <div class="pick__head">
                         <div>
                             <span class="pick__role">The Daughter</span>
-                            <h3 class="pick__name">Mira</h3>
+                            <h3 class="pick__name">The Artist</h3>
                         </div>
                         <div class="pick__dream-icon" aria-hidden="true">
-                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M4 28l8-8"/>
                                 <path d="M10 22l4-4 6 6-4 4z"/>
                                 <path d="M16 16l8-8a3 3 0 0 1 4 4l-8 8z"/>
                             </svg>
                         </div>
                     </div>
-                    <p class="pick__dream"><span>Dream:</span> Become an artist.</p>
-                    <p class="pick__desc">Fills the margins of math notes with charcoal portraits. Keeps a locked sketchbook beneath a loose floorboard. Her mother calls art a hobby.</p>
-                    <div class="pick__stats">
-                        <div class="stat"><span class="stat__label">Imagination</span><div class="stat__bar"><span style="--w: 88%"></span></div></div>
-                        <div class="stat"><span class="stat__label">Resolve</span><div class="stat__bar"><span style="--w: 64%"></span></div></div>
-                        <div class="stat"><span class="stat__label">Quiet rage</span><div class="stat__bar"><span style="--w: 71%"></span></div></div>
+
+                    <div class="bubble bubble--maroon">
+                        <p>She wants to be an artist, but her parents forbid her from the path. She must fight for her dreams while maintaining a healthy relationship with her parents.</p>
                     </div>
-                    <button class="pick__cta" data-cursor="hover">
-                        <span>Play as Mira</span>
+
+                    <div class="pick__attrs">
+                        <div class="attr">
+                            <span class="attr__label">Hobby</span>
+                            <span class="attr__value">Drawing · Sketching</span>
+                        </div>
+                        <div class="attr">
+                            <span class="attr__label">Personality</span>
+                            <span class="attr__value">Insecure · Afraid to express opinions</span>
+                        </div>
+                    </div>
+
+                    <div class="pick__stats">
+                        <div class="stat">
+                            <span class="stat__label">Imagination</span>
+                            <div class="stat__bar"><span style="--w: 88%"></span></div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__label">Resolve</span>
+                            <div class="stat__bar"><span style="--w: 64%"></span></div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__label">Quiet rage</span>
+                            <div class="stat__bar"><span style="--w: 71%"></span></div>
+                        </div>
+                    </div>
+
+                    <a href="https://mdid-howard-lee.github.io/smiley-children/" target="_blank" rel="noopener" class="pick__cta" data-cursor="hover">
+                        <span>Play as the Daughter</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </button>
+                    </a>
                 </div>
             </article>
         </div>
     </section>
 
-    <!-- FEATURES -->
-    <section class="features" id="features">
+    <!-- SMILEY COIN ITEM -->
+    <section class="item" id="item">
         <div class="section__chrome">
-            <span class="section__number">02</span>
-            <span class="section__label">Gameplay</span>
+            <span class="section__number">03</span>
+            <span class="section__label">Item</span>
         </div>
 
-        <div class="features__head" data-reveal="up">
-            <h2 class="section__title">Mechanics built<br>around feeling.</h2>
-            <p class="section__sub">Six systems that let small moments echo into the rest of the story.</p>
-        </div>
-
-        <div class="features__grid">
-            <article class="feature" data-reveal="up" data-cursor="hover">
-                <div class="feature__icon">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
-                        <path d="M6 8h14a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6l-5 4v-4H6a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2z"/>
-                        <path d="M11 14h8M11 17h5"/>
-                    </svg>
+        <div class="item__grid">
+            <div class="item__visual" data-reveal="left">
+                <div class="item__coin">
+                    <img src="assets/coin.png" alt="A golden Smiley Coin with a happy face." class="item__coin-img">
+                    <div class="item__coin-glow"></div>
                 </div>
-                <h3 class="feature__title">Choice-Based Dialogue</h3>
-                <p class="feature__desc">Every reply matters. Words land differently depending on who's listening and what came before.</p>
-                <span class="feature__index">01</span>
-            </article>
-
-            <article class="feature" data-reveal="up" data-cursor="hover">
-                <div class="feature__icon">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
-                        <circle cx="11" cy="12" r="4"/><circle cx="21" cy="12" r="4"/>
-                        <path d="M5 24c0-3 3-5 6-5s6 2 6 5M15 24c0-3 3-5 6-5s6 2 6 5"/>
-                    </svg>
+                <div class="item__coin item__coin--float item__coin--float-1">
+                    <img src="assets/coin.png" alt="">
                 </div>
-                <h3 class="feature__title">Relationship System</h3>
-                <p class="feature__desc">Four core bonds with their own thresholds of trust, distance, and resentment that shift in real time.</p>
-                <span class="feature__index">02</span>
-            </article>
-
-            <article class="feature" data-reveal="up" data-cursor="hover">
-                <div class="feature__icon">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
-                        <path d="M16 6v6M16 12l-7 8M16 12l7 8"/>
-                        <circle cx="16" cy="6" r="2"/><circle cx="9" cy="22" r="2"/><circle cx="23" cy="22" r="2"/>
-                    </svg>
+                <div class="item__coin item__coin--float item__coin--float-2">
+                    <img src="assets/coin.png" alt="">
                 </div>
-                <h3 class="feature__title">Multiple Endings</h3>
-                <p class="feature__desc">Seven distinct conclusions — none of them simply "good" or "bad." Just true to what you chose.</p>
-                <span class="feature__index">03</span>
-            </article>
-
-            <article class="feature" data-reveal="up" data-cursor="hover">
-                <div class="feature__icon">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
-                        <path d="M6 7h14a4 4 0 0 1 4 4v15l-4-3-4 3-4-3-4 3-2-2V7z"/>
-                        <path d="M10 13h10M10 17h7"/>
-                    </svg>
-                </div>
-                <h3 class="feature__title">Emotional Storytelling</h3>
-                <p class="feature__desc">A grounded script written with input from family therapists and teenagers from across three cities.</p>
-                <span class="feature__index">04</span>
-            </article>
-
-            <article class="feature" data-reveal="up" data-cursor="hover">
-                <div class="feature__icon">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
-                        <circle cx="16" cy="16" r="10"/>
-                        <path d="M16 10v6l4 2"/>
-                        <path d="M16 4v2M16 26v2M4 16h2M26 16h2"/>
-                    </svg>
-                </div>
-                <h3 class="feature__title">Daily Life Simulation</h3>
-                <p class="feature__desc">Wake up, walk to school, share a meal, lock your door. Routine carries the story between its biggest moments.</p>
-                <span class="feature__index">05</span>
-            </article>
-
-            <article class="feature" data-reveal="up" data-cursor="hover">
-                <div class="feature__icon">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
-                        <circle cx="8" cy="10" r="3"/><circle cx="24" cy="10" r="3"/>
-                        <circle cx="8" cy="22" r="3"/><circle cx="24" cy="22" r="3"/>
-                        <circle cx="16" cy="16" r="3"/>
-                        <path d="M11 10h10M11 22h10M10 12l4 3M22 12l-4 3M10 20l4-3M22 20l-4-3"/>
-                    </svg>
-                </div>
-                <h3 class="feature__title">Dynamic Interactions</h3>
-                <p class="feature__desc">Characters remember silences, broken promises, and the small kindnesses you thought no one noticed.</p>
-                <span class="feature__index">06</span>
-            </article>
-        </div>
-    </section>
-
-    <!-- SYSTEMS DEEP-DIVE -->
-    <section class="systems" id="systems">
-        <div class="section__chrome">
-            <span class="section__number">04</span>
-            <span class="section__label">Inside the Game</span>
-        </div>
-
-        <div class="features__head" data-reveal="up">
-            <h2 class="section__title">Three systems.<br>One quiet conversation.</h2>
-            <p class="section__sub">The pieces that make Between Expectations feel less like a game and more like a life you're trying to fix.</p>
-        </div>
-
-        <!-- POV -->
-        <div class="system" data-reveal="up">
-            <div class="system__copy">
-                <span class="system__tag">System · 01</span>
-                <h3 class="system__title">Perspective Switch</h3>
-                <p class="system__lead">See through their eyes — or watch from the doorway.</p>
-                <p class="system__desc">Press a button and the camera changes its mind. First person for the moments that hurt; third person for the moments you need to see from the outside.</p>
-                <div class="system__chips">
-                    <span class="chip"><span class="chip__dot"></span> Switch anytime</span>
-                    <span class="chip"><span class="chip__dot"></span> Cinematic 3rd person</span>
-                    <span class="chip"><span class="chip__dot"></span> Intimate 1st person</span>
+                <div class="item__coin item__coin--float item__coin--float-3">
+                    <img src="assets/coin.png" alt="">
                 </div>
             </div>
-            <div class="system__visual system__visual--pov">
-                <div class="pov__frame pov__frame--first">
-                    <div class="pov__image" style="background-image: url('https://picsum.photos/seed/be-pov-first-person/900/700');"></div>
-                    <div class="pov__overlay"></div>
-                    <span class="pov__label">First Person</span>
-                </div>
-                <div class="pov__frame pov__frame--third">
-                    <div class="pov__image" style="background-image: url('https://picsum.photos/seed/be-pov-third-person/900/700');"></div>
-                    <div class="pov__overlay"></div>
-                    <span class="pov__label">Third Person</span>
-                </div>
-            </div>
-        </div>
 
-        <!-- SMILEY COINS -->
-        <div class="system system--reverse" data-reveal="up">
-            <div class="system__visual system__visual--coins">
-                <div class="coin coin--lg">
-                    <svg viewBox="0 0 100 100" fill="none">
-                        <defs>
-                            <radialGradient id="coinGrad" cx="35%" cy="30%">
-                                <stop offset="0%" stop-color="#ffd9a8"/>
-                                <stop offset="60%" stop-color="#ff9842"/>
-                                <stop offset="100%" stop-color="#cc6a1c"/>
-                            </radialGradient>
-                        </defs>
-                        <circle cx="50" cy="50" r="44" fill="url(#coinGrad)" stroke="#ffe3c2" stroke-width="1.5"/>
-                        <circle cx="38" cy="42" r="3.5" fill="#3a1f08"/>
-                        <circle cx="62" cy="42" r="3.5" fill="#3a1f08"/>
-                        <path d="M34 58 Q50 72 66 58" stroke="#3a1f08" stroke-width="4" stroke-linecap="round" fill="none"/>
-                    </svg>
+            <div class="item__copy" data-reveal="right">
+                <span class="item__eyebrow">Item · 01</span>
+                <h2 class="section__title drip">Smiley<br>Coin.</h2>
+                <div class="bubble bubble--maroon bubble--large">
+                    <p>The more coins, the better your choice — the healthier your relationships. Earn your coins. <strong>Save your family.</strong></p>
                 </div>
-                <div class="coin__glow"></div>
-            </div>
-            <div class="system__copy">
-                <span class="system__tag">System · 02</span>
-                <h3 class="system__title">Smiley Coins</h3>
-                <p class="system__lead">The currency of small kindnesses.</p>
-                <p class="system__desc">Every time you do something good — answer honestly, help with the dishes, remember an anniversary — the game gives you a Smiley Coin. Spend them when it counts.</p>
+
                 <div class="coin-grid">
                     <div class="coin-grid__col">
                         <span class="coin-grid__heading">Earn from</span>
@@ -393,6 +375,7 @@
                             <li><span class="coin-grid__plus">+</span> Honest dialogue choices</li>
                             <li><span class="coin-grid__plus">+</span> Helping at home</li>
                             <li><span class="coin-grid__plus">+</span> Completing side quests</li>
+                            <li><span class="coin-grid__plus">+</span> Small daily kindnesses</li>
                         </ul>
                     </div>
                     <div class="coin-grid__col">
@@ -400,247 +383,289 @@
                         <ul class="coin-grid__list">
                             <li><span class="coin-grid__minus">→</span> Heart-to-heart moments</li>
                             <li><span class="coin-grid__minus">→</span> Gifts for family</li>
-                            <li><span class="coin-grid__minus">→</span> Persuasion attempts</li>
+                            <li><span class="coin-grid__minus">→</span> Persuading your parents</li>
+                            <li><span class="coin-grid__minus">→</span> Unlocking the truth</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- SIDE QUESTS -->
-        <div class="system" data-reveal="up">
-            <div class="system__copy">
-                <span class="system__tag">System · 03</span>
-                <h3 class="system__title">Side Quests</h3>
-                <p class="system__lead">Smaller stories that change everything.</p>
-                <p class="system__desc">Between scripted scenes, the world is full of quiet errands. A friend needs cover for an audition. Dad lost an old vinyl ten years ago. Each one teaches your family something about you.</p>
-                <div class="system__chips">
-                    <span class="chip"><span class="chip__dot"></span> Optional</span>
-                    <span class="chip"><span class="chip__dot"></span> Smiley Coins</span>
-                    <span class="chip"><span class="chip__dot"></span> Relationship shifts</span>
+    <!-- GAME DEMONSTRATION -->
+    <section class="demo" id="demo">
+        <div class="section__chrome">
+            <span class="section__number">04</span>
+            <span class="section__label">Game Demonstration</span>
+        </div>
+
+        <div class="features__head" data-reveal="up">
+            <h2 class="section__title drip">How the<br>game plays.</h2>
+            <p class="section__sub">Six systems built around small moments — and the long quiet weight they carry into the rest of the story.</p>
+        </div>
+
+        <div class="demo__shots">
+            <figure class="demo__shot" data-reveal="up" data-cursor="hover">
+                <img src="assets/demo-select.png" alt="Character select screen showing the son and the daughter side by side.">
+                <figcaption>
+                    <span class="demo__shot-num">01</span>
+                    <span class="demo__shot-title">The choice that changes everything.</span>
+                </figcaption>
+            </figure>
+            <figure class="demo__shot" data-reveal="up" data-cursor="hover">
+                <img src="assets/demo-quest.png" alt="In-game scene showing a side quest with a sketchbook.">
+                <figcaption>
+                    <span class="demo__shot-num">02</span>
+                    <span class="demo__shot-title">Side quests, woven through every day.</span>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="features__grid">
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <circle cx="11" cy="12" r="4"/>
+                        <circle cx="21" cy="12" r="4"/>
+                        <path d="M4 26c0-3.5 3.13-6 7-6s7 2.5 7 6M14 26c0-3.5 3.13-6 7-6s7 2.5 7 6"/>
+                    </svg>
                 </div>
-            </div>
-            <div class="system__visual system__visual--quests">
-                <div class="quest-log">
-                    <div class="quest-log__head">
-                        <span class="quest-log__title">Active Quests</span>
-                        <span class="quest-log__count">04 / 12</span>
-                    </div>
-                    <div class="quest">
-                        <div class="quest__body">
-                            <div class="quest__row"><span class="quest__name">Cover Mom's night shift</span><span class="quest__reward">+12</span></div>
-                            <span class="quest__tag">Family · Mother</span>
-                        </div>
-                    </div>
-                    <div class="quest">
-                        <div class="quest__body">
-                            <div class="quest__row"><span class="quest__name">Find Dad's old vinyl records</span><span class="quest__reward">+18</span></div>
-                            <span class="quest__tag">Family · Father</span>
-                        </div>
-                    </div>
-                    <div class="quest">
-                        <div class="quest__body">
-                            <div class="quest__row"><span class="quest__name">Help Maya nail their audition</span><span class="quest__reward">+15</span></div>
-                            <span class="quest__tag">Friends</span>
-                        </div>
-                    </div>
-                    <div class="quest quest--locked">
-                        <div class="quest__body">
-                            <div class="quest__row"><span class="quest__name">The conversation you've been avoiding</span><span class="quest__reward">??</span></div>
-                            <span class="quest__tag">Requires 40+ Smiley Coins</span>
-                        </div>
-                    </div>
+                <h3 class="feature__title">Choose Your Path</h3>
+                <p class="feature__desc">Son or daughter. Singer or artist. One playthrough, one perspective.</p>
+                <span class="feature__index">01</span>
+            </article>
+
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <path d="M6 8h14a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6l-5 4v-4H6a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2z"/>
+                        <path d="M11 14h8M11 17h5"/>
+                    </svg>
                 </div>
-            </div>
+                <h3 class="feature__title">Dialogue Choices</h3>
+                <p class="feature__desc">Every reply is a small risk. Say the truth, hold the line, or stay silent.</p>
+                <span class="feature__index">02</span>
+            </article>
+
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <path d="M16 27s-9-5.5-9-13a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 7.5-9 13-9 13z"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Convince Your Parents</h3>
+                <p class="feature__desc">Trust isn't a slider. You earn it across dozens of small, ordinary moments.</p>
+                <span class="feature__index">03</span>
+            </article>
+
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.25"/>
+                        <ellipse cx="12.5" cy="14" rx="1.1" ry="1.7" fill="currentColor"/>
+                        <ellipse cx="19.5" cy="14" rx="1.1" ry="1.7" fill="currentColor"/>
+                        <path d="M11.5 18.5c1.2 1.7 3 2.8 4.5 2.8s3.3-1.1 4.5-2.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Smiley Coins</h3>
+                <p class="feature__desc">The warm currency of small kindnesses. Earn them. Spend them when it counts.</p>
+                <span class="feature__index">04</span>
+            </article>
+
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <path d="M6 9h13l-2 4 2 4H6z"/>
+                        <path d="M6 4v24"/>
+                        <circle cx="24" cy="20" r="3"/>
+                        <path d="M24 23v5"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Side Quests</h3>
+                <p class="feature__desc">Smaller stories live alongside the main arc — each one bends the world quietly.</p>
+                <span class="feature__index">05</span>
+            </article>
+
+            <article class="feature" data-reveal="up" data-cursor="hover">
+                <div class="feature__icon">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.25">
+                        <path d="M3 16c3-6 8-9 13-9s10 3 13 9c-3 6-8 9-13 9s-10-3-13-9z"/>
+                        <circle cx="16" cy="16" r="4.5"/>
+                        <circle cx="16" cy="16" r="1.5" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3 class="feature__title">Switchable POV</h3>
+                <p class="feature__desc">First person for intimacy. Third person for cinema. Switch any time.</p>
+                <span class="feature__index">06</span>
+            </article>
         </div>
     </section>
 
-    <!-- STORY -->
-    <section class="story" id="story">
-        <div class="story__bg" style="background-image: url('https://picsum.photos/seed/be-rainy-city-night/1920/1200');"></div>
-        <div class="story__overlay"></div>
+    <!-- LOCATION -->
+    <section class="location" id="location">
+        <div class="location__bg" style="background-image: url('assets/location.png');"></div>
+        <div class="location__overlay"></div>
 
         <div class="section__chrome section__chrome--light">
-            <span class="section__number">03</span>
-            <span class="section__label">The Story</span>
+            <span class="section__number">05</span>
+            <span class="section__label">Location</span>
         </div>
 
-        <div class="story__inner">
-            <div class="story__intro" data-reveal="up">
-                <h2 class="section__title section__title--light">A family,<br>in a country of small rooms.</h2>
-                <p class="story__lead">
-                    Across one autumn semester, the dinner table becomes a battlefield no one knows they're fighting. The dream is small. It's just a guitar, or just a sketchbook. But this house has never been good at small things.
+        <div class="location__inner">
+            <div class="location__copy" data-reveal="up">
+                <h2 class="section__title section__title--light drip">Pleasant house,<br><span class="accent">unpleasant home.</span></h2>
+                <p class="location__lead">
+                    Warm lamps. Family photos. A dining table set for four. Everything looks like a place you'd want to live — until you live there. Across one apartment, one school, and the long walk between them, the silences pile up like furniture nobody moves.
                 </p>
-            </div>
 
-            <div class="story__themes">
-                <article class="theme" data-reveal="up">
-                    <div class="theme__image" style="background-image: url('https://picsum.photos/seed/be-school-corridor/800/600');"><div class="theme__image-overlay"></div></div>
-                    <div class="theme__body">
-                        <span class="theme__tag">Theme 01</span>
-                        <h3 class="theme__title">Academic Pressure</h3>
-                        <p class="theme__desc">When grades become love letters, every red mark is a rejection.</p>
-                    </div>
-                </article>
-
-                <article class="theme" data-reveal="up">
-                    <div class="theme__image" style="background-image: url('https://picsum.photos/seed/be-family-dinner-tense/800/600');"><div class="theme__image-overlay"></div></div>
-                    <div class="theme__body">
-                        <span class="theme__tag">Theme 02</span>
-                        <h3 class="theme__title">Misunderstanding</h3>
-                        <p class="theme__desc">Two people in the same room, speaking two different languages of care.</p>
-                    </div>
-                </article>
-
-                <article class="theme" data-reveal="up">
-                    <div class="theme__image" style="background-image: url('https://picsum.photos/seed/be-bedroom-dark-blue/800/600');"><div class="theme__image-overlay"></div></div>
-                    <div class="theme__body">
-                        <span class="theme__tag">Theme 03</span>
-                        <h3 class="theme__title">Emotional Distance</h3>
-                        <p class="theme__desc">A door closed for so long that no one remembers who shut it first.</p>
-                    </div>
-                </article>
-
-                <article class="theme" data-reveal="up">
-                    <div class="theme__image" style="background-image: url('https://picsum.photos/seed/be-rooftop-night-warm/800/600');"><div class="theme__image-overlay"></div></div>
-                    <div class="theme__body">
-                        <span class="theme__tag">Theme 04</span>
-                        <h3 class="theme__title">Rebuilding Trust</h3>
-                        <p class="theme__desc">It begins with a sentence that doesn't end in an argument. It begins quietly.</p>
-                    </div>
-                </article>
+                <div class="location__themes">
+                    <article class="theme">
+                        <span class="theme__tag">01</span>
+                        <h3 class="theme__title">The Dining Table</h3>
+                        <p class="theme__desc">Where opinions are passed like serving dishes — and you take what you're given.</p>
+                    </article>
+                    <article class="theme">
+                        <span class="theme__tag">02</span>
+                        <h3 class="theme__title">Your Bedroom</h3>
+                        <p class="theme__desc">A locked door. A second life. A song no one has ever heard you sing.</p>
+                    </article>
+                    <article class="theme">
+                        <span class="theme__tag">03</span>
+                        <h3 class="theme__title">The School Hallway</h3>
+                        <p class="theme__desc">Loud in the morning, empty in the afternoon. A place to practice being someone else.</p>
+                    </article>
+                    <article class="theme">
+                        <span class="theme__tag">04</span>
+                        <h3 class="theme__title">The Bus Stop</h3>
+                        <p class="theme__desc">Where you sit between two lives — the one you have and the one you want.</p>
+                    </article>
+                </div>
             </div>
 
             <blockquote class="story__quote" data-reveal="up">
-                <p>"I'm not asking you to be perfect. I'm asking you to come home."</p>
-                <cite>— Mother, Chapter 4</cite>
+                <p class="drip">"I'm not asking you to give up on me. I'm asking you to listen, just once, all the way through."</p>
+                <cite>— Smiley Children, Chapter 7</cite>
             </blockquote>
         </div>
     </section>
 
     <!-- CAST -->
-    <section class="cast" id="characters">
+    <section class="cast" id="cast">
         <div class="section__chrome">
-            <span class="section__number">04</span>
-            <span class="section__label">The Cast</span>
+            <span class="section__number">06</span>
+            <span class="section__label">The Family</span>
         </div>
 
         <div class="features__head" data-reveal="up">
-            <h2 class="section__title">Four people.<br>One unspoken conversation.</h2>
-            <p class="section__sub">Every character carries a private weight. You will only ever see part of it.</p>
+            <h2 class="section__title drip">The people<br>under one roof.</h2>
+            <p class="section__sub">You play one of these two children. The other three people in the house remember everything.</p>
         </div>
 
         <div class="cast__grid">
-            <article class="character" data-reveal="up" data-cursor="hover">
-                <div class="character__portrait" style="background-image: url('https://picsum.photos/seed/be-ethan-teen-quiet/700/900');">
+            <article class="character character--protagonist" data-reveal="up" data-cursor="hover">
+                <div class="character__portrait">
+                    <img src="assets/son.png" alt="">
                     <div class="character__portrait-overlay"></div>
-                    <span class="character__role">Protagonist</span>
+                    <span class="character__role character__role--protag">Playable · Path A</span>
                 </div>
                 <div class="character__body">
-                    <span class="character__age">16 · Eldest son</span>
-                    <h3 class="character__name">Ethan</h3>
-                    <p class="character__desc">A quiet, creative teenager who fills his sketchbook with everything he can't say out loud.</p>
-                    <div class="character__tags"><span class="tag">Introverted</span><span class="tag">Artistic</span><span class="tag">Conflicted</span></div>
+                    <span class="character__age">16 · The Son · Dreams of singing</span>
+                    <h3 class="character__name">The Singer</h3>
+                    <p class="character__desc">Plays guitar in his closet so no one hears. Records demos at 2 a.m. into a phone. His parents want him to be anything but a singer.</p>
+                    <div class="character__tags">
+                        <span class="tag">Shy</span>
+                        <span class="tag">Quiet</span>
+                        <span class="tag">Hopeful</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="character character--protagonist" data-reveal="up" data-cursor="hover">
+                <div class="character__portrait">
+                    <img src="assets/daughter.png" alt="">
+                    <div class="character__portrait-overlay"></div>
+                    <span class="character__role character__role--protag">Playable · Path B</span>
+                </div>
+                <div class="character__body">
+                    <span class="character__age">16 · The Daughter · Dreams of painting</span>
+                    <h3 class="character__name">The Artist</h3>
+                    <p class="character__desc">Fills the margins of math notes with sketches no one is allowed to open. Hides a sketchbook beneath a loose floorboard.</p>
+                    <div class="character__tags">
+                        <span class="tag">Insecure</span>
+                        <span class="tag">Watchful</span>
+                        <span class="tag">Stubborn</span>
+                    </div>
                 </div>
             </article>
 
             <article class="character" data-reveal="up" data-cursor="hover">
-                <div class="character__portrait" style="background-image: url('https://picsum.photos/seed/be-mother-warm-tired/700/900');">
+                <div class="character__portrait character__portrait--silhouette">
+                    <div class="character__silhouette character__silhouette--mother"></div>
                     <div class="character__portrait-overlay"></div>
-                    <span class="character__role">Family</span>
+                    <span class="character__role">Family · Mother</span>
                 </div>
                 <div class="character__body">
                     <span class="character__age">42 · Mother</span>
                     <h3 class="character__name">Mother</h3>
-                    <p class="character__desc">A nurse who loves fiercely and silently, and doesn't know how to translate either anymore.</p>
-                    <div class="character__tags"><span class="tag">Caring</span><span class="tag">Tired</span><span class="tag">Distant</span></div>
+                    <p class="character__desc">Works night shifts and still makes breakfast in the morning. Loves fiercely, silently — and forgets she has to translate either.</p>
+                    <div class="character__tags">
+                        <span class="tag">Caring</span>
+                        <span class="tag">Tired</span>
+                        <span class="tag">Distant</span>
+                    </div>
                 </div>
             </article>
 
             <article class="character" data-reveal="up" data-cursor="hover">
-                <div class="character__portrait" style="background-image: url('https://picsum.photos/seed/be-father-strict-grey/700/900');">
+                <div class="character__portrait character__portrait--silhouette">
+                    <div class="character__silhouette character__silhouette--father"></div>
                     <div class="character__portrait-overlay"></div>
-                    <span class="character__role">Family</span>
+                    <span class="character__role">Family · Father</span>
                 </div>
                 <div class="character__body">
                     <span class="character__age">46 · Father</span>
                     <h3 class="character__name">Father</h3>
-                    <p class="character__desc">Believes love is preparation for a hard world. Has never once said the word "proud" out loud.</p>
-                    <div class="character__tags"><span class="tag">Strict</span><span class="tag">Driven</span><span class="tag">Closed-off</span></div>
-                </div>
-            </article>
-
-            <article class="character" data-reveal="up" data-cursor="hover">
-                <div class="character__portrait" style="background-image: url('https://picsum.photos/seed/be-bestfriend-warm-smile/700/900');">
-                    <div class="character__portrait-overlay"></div>
-                    <span class="character__role">Friend</span>
-                </div>
-                <div class="character__body">
-                    <span class="character__age">17 · Best friend</span>
-                    <h3 class="character__name">Maya</h3>
-                    <p class="character__desc">Waits outside the school gates. Sees Ethan clearer than anyone — and refuses to let him disappear.</p>
-                    <div class="character__tags"><span class="tag">Loyal</span><span class="tag">Honest</span><span class="tag">Encouraging</span></div>
+                    <p class="character__desc">Built his life from careful decisions. Believes love is preparation for a hard world. Has never once said the word "proud" out loud.</p>
+                    <div class="character__tags">
+                        <span class="tag">Strict</span>
+                        <span class="tag">Driven</span>
+                        <span class="tag">Closed</span>
+                    </div>
                 </div>
             </article>
         </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="gallery" id="gallery">
-        <div class="section__chrome">
-            <span class="section__number">05</span>
-            <span class="section__label">Screenshots</span>
-        </div>
-
-        <div class="features__head" data-reveal="up">
-            <h2 class="section__title">Quiet moments,<br>captured in cinema.</h2>
-            <p class="section__sub">Scenes from the autumn semester. Each one is a choice waiting to happen.</p>
-        </div>
-
-        <div class="gallery__grid">
-            <figure class="shot shot--tall" data-reveal="up" data-cursor="hover">
-                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-dinner-argue/1000/1400');"></div>
-                <figcaption class="shot__caption"><span class="shot__num">01</span><span class="shot__title">The Dinner Argument</span></figcaption>
-            </figure>
-            <figure class="shot" data-reveal="up" data-cursor="hover">
-                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-texting-ui/1000/800');"></div>
-                <figcaption class="shot__caption"><span class="shot__num">02</span><span class="shot__title">Texting Choices</span></figcaption>
-            </figure>
-            <figure class="shot" data-reveal="up" data-cursor="hover">
-                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-school-hallway/1000/800');"></div>
-                <figcaption class="shot__caption"><span class="shot__num">03</span><span class="shot__title">Empty Corridor</span></figcaption>
-            </figure>
-            <figure class="shot shot--wide" data-reveal="up" data-cursor="hover">
-                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-rooftop-night/1400/800');"></div>
-                <figcaption class="shot__caption"><span class="shot__num">04</span><span class="shot__title">Rooftop, 11:42 PM</span></figcaption>
-            </figure>
-            <figure class="shot" data-reveal="up" data-cursor="hover">
-                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-bedroom-emotional/1000/800');"></div>
-                <figcaption class="shot__caption"><span class="shot__num">05</span><span class="shot__title">The Locked Door</span></figcaption>
-            </figure>
-            <figure class="shot" data-reveal="up" data-cursor="hover">
-                <div class="shot__image" style="background-image: url('https://picsum.photos/seed/be-shot-kitchen-morning/1000/800');"></div>
-                <figcaption class="shot__caption"><span class="shot__num">06</span><span class="shot__title">Morning, Unspoken</span></figcaption>
-            </figure>
-        </div>
-    </section>
-
-    <!-- WISHLIST CTA -->
-    <section class="cta" id="wishlist">
-        <div class="cta__bg" style="background-image: url('https://picsum.photos/seed/be-cta-warmlight-window/1920/1000');"></div>
+    <!-- DOWNLOAD CTA with REAL QR -->
+    <section class="cta" id="download">
+        <div class="cta__bg"></div>
         <div class="cta__overlay"></div>
         <div class="cta__inner" data-reveal="up">
-            <span class="cta__eyebrow">Winter 2026</span>
-            <h2 class="cta__title">The conversation<br>is almost ready.</h2>
-            <p class="cta__sub">Wishlist <em>Between Expectations</em> and we'll let you know when the door opens.</p>
-            <div class="cta__buttons">
-                <a href="#" class="btn btn--primary" data-cursor="hover">
-                    <span class="btn__label">Wishlist on Steam</span>
-                    <span class="btn__sub">Free demo at launch</span>
-                </a>
-                <a href="#" class="btn btn--ghost" data-cursor="hover">
-                    <span>Join the Newsletter</span>
-                </a>
+            <div class="cta__copy">
+                <span class="cta__eyebrow drip">Join Now</span>
+                <h2 class="cta__title drip">Download<br>here.</h2>
+                <p class="cta__sub">Smiley Children is playable now in your browser. No install. No download. Just the front door.</p>
+                <div class="cta__buttons">
+                    <a href="https://mdid-howard-lee.github.io/smiley-children/" target="_blank" rel="noopener" class="btn btn--primary" data-cursor="hover">
+                        <span class="btn__label">Play in Browser</span>
+                        <span class="btn__sub">Free · Open Now</span>
+                        <span class="btn__glow"></span>
+                    </a>
+                    <a href="#about" class="btn btn--ghost" data-cursor="hover">
+                        <span>Learn More</span>
+                    </a>
+                </div>
+                <p class="cta__url">
+                    <span class="cta__url-label">Or visit</span>
+                    <a href="https://mdid-howard-lee.github.io/smiley-children/" target="_blank" rel="noopener" data-cursor="hover">mdid-howard-lee.github.io/smiley-children/</a>
+                </p>
+            </div>
+
+            <div class="cta__qr-wrap" data-cursor="hover">
+                <div class="cta__qr">
+                    <img src="assets/qr.png" alt="QR code linking to smiley-children playable demo.">
+                </div>
+                <span class="cta__qr-label">Scan to play</span>
             </div>
         </div>
     </section>
@@ -650,44 +675,83 @@
         <div class="footer__top">
             <div class="footer__col footer__col--brand">
                 <div class="footer__logo">
-                    <span class="footer__logo-mark">BE</span>
+                    <span class="footer__logo-mark">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="30" fill="none" stroke="#f4ecd8" stroke-width="3"/>
+                            <ellipse cx="40" cy="44" rx="2.5" ry="4" fill="#f4ecd8"/>
+                            <ellipse cx="60" cy="44" rx="2.5" ry="4" fill="#f4ecd8"/>
+                            <path d="M35 56 Q50 70 65 56" stroke="#f4ecd8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                            <circle cx="50" cy="50" r="42" fill="none" stroke="#b8362e" stroke-width="6"/>
+                            <line x1="22" y1="22" x2="78" y2="78" stroke="#b8362e" stroke-width="6" stroke-linecap="round"/>
+                        </svg>
+                    </span>
                     <div>
-                        <span class="footer__logo-title">Between Expectations</span>
-                        <span class="footer__logo-sub">A Hollow Window Studio project</span>
+                        <span class="footer__logo-title">Smiley Children</span>
+                        <span class="footer__logo-sub">A roleplay simulation</span>
                     </div>
                 </div>
-                <p class="footer__about">A narrative roleplay simulation about the silences between the people we love.</p>
+                <p class="footer__about">A choice-driven roleplay simulation about a child, a parent, and the dream between them. Please your parents, but don't lose yourself.</p>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Twitter" data-cursor="hover">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Discord" data-cursor="hover">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/></svg>
+                    </a>
+                    <a href="https://github.com/mdid-howard-lee/smiley-children" target="_blank" rel="noopener" class="footer__social-link" aria-label="GitHub" data-cursor="hover">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.58.24 2.75.12 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.05.78 2.12v3.14c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Instagram" data-cursor="hover">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                    </a>
+                </div>
             </div>
 
             <div class="footer__col">
                 <span class="footer__heading">Game</span>
                 <ul class="footer__list">
                     <li><a href="#about" data-cursor="hover">About</a></li>
-                    <li><a href="#features" data-cursor="hover">Features</a></li>
-                    <li><a href="#story" data-cursor="hover">The Story</a></li>
-                    <li><a href="#characters" data-cursor="hover">Cast</a></li>
-                    <li><a href="#gallery" data-cursor="hover">Screenshots</a></li>
+                    <li><a href="#choose" data-cursor="hover">Characters</a></li>
+                    <li><a href="#item" data-cursor="hover">Smiley Coin</a></li>
+                    <li><a href="#demo" data-cursor="hover">Gameplay</a></li>
+                    <li><a href="#location" data-cursor="hover">Location</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <span class="footer__heading">Studio</span>
+                <ul class="footer__list">
+                    <li><a href="https://github.com/mdid-howard-lee/smiley-children" target="_blank" rel="noopener" data-cursor="hover">GitHub</a></li>
+                    <li><a href="#" data-cursor="hover">Press Kit</a></li>
+                    <li><a href="#" data-cursor="hover">Credits</a></li>
+                    <li><a href="#" data-cursor="hover">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer__col footer__col--qr">
-                <span class="footer__heading">Mobile Demo</span>
-                <p class="footer__qr-desc">Scan to be notified when the demo arrives.</p>
-                <div class="footer__qr" aria-label="QR code placeholder">
-                    <div class="footer__qr-grid" id="qrGrid"></div>
+                <span class="footer__heading">Play Now</span>
+                <p class="footer__qr-desc">Scan to open the game in your browser.</p>
+                <div class="footer__qr-img">
+                    <img src="assets/qr.png" alt="QR code linking to the game.">
                 </div>
+                <span class="footer__qr-link">smiley-children</span>
             </div>
         </div>
 
         <div class="footer__bottom">
             <div class="footer__bottom-left">
-                <span class="footer__release">Coming Soon · 2026</span>
+                <span class="footer__release">Playable Now · 2026</span>
                 <span class="footer__divider">·</span>
-                <span>© 2026 Hollow Window Studio</span>
+                <span>© 2026 mdid · howard · lee</span>
+            </div>
+            <div class="footer__bottom-right">
+                <a href="#" data-cursor="hover">Privacy</a>
+                <a href="#" data-cursor="hover">Terms</a>
+                <a href="#" data-cursor="hover">Imprint</a>
             </div>
         </div>
 
-        <div class="footer__wordmark">EXPECTATIONS</div>
+        <div class="footer__wordmark drip">CHILDREN</div>
     </footer>
 
     <script src="script.js"></script>

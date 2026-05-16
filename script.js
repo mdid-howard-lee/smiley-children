@@ -1,20 +1,22 @@
 /* =============================================
-   BETWEEN EXPECTATIONS — interactions
+   SMILEY CHILDREN — interactions
    ============================================= */
 
 (() => {
     'use strict';
 
-    // LOADING SCREEN
+    // ---------- LOADING SCREEN ----------
     const loader = document.getElementById('loader');
     const loaderBar = document.getElementById('loaderBar');
     const loaderStatus = document.getElementById('loaderStatus');
     const loaderPercent = document.getElementById('loaderPercent');
 
     const statusFrames = [
-        { p: 0,  text: 'Preparing the story' },
-        { p: 40, text: 'Lighting the hallway' },
-        { p: 75, text: 'Tuning the silence' },
+        { p: 0,  text: 'Opening the front door' },
+        { p: 18, text: 'Lighting the dining room' },
+        { p: 38, text: 'Tuning the family' },
+        { p: 58, text: 'Polishing the Smiley Coins' },
+        { p: 78, text: 'Setting the table for four' },
         { p: 95, text: 'Almost home' },
     ];
 
@@ -45,7 +47,7 @@
     }
     requestAnimationFrame(tickLoader);
 
-    // CUSTOM CURSOR
+    // ---------- CUSTOM CURSOR ----------
     const cursorDot = document.getElementById('cursorDot');
     const cursorRing = document.getElementById('cursorRing');
 
@@ -68,7 +70,8 @@
     }
     animateRing();
 
-    document.querySelectorAll('[data-cursor="hover"], a, button').forEach(el => {
+    const hoverTargets = document.querySelectorAll('[data-cursor="hover"], a, button, .feature, .character, .pick, .demo__shot');
+    hoverTargets.forEach(el => {
         el.addEventListener('mouseenter', () => {
             cursorRing.classList.add('is-hover');
             cursorDot.classList.add('is-hover');
@@ -79,20 +82,51 @@
         });
     });
 
-    // NAV SCROLL
+    document.addEventListener('mouseleave', () => {
+        cursorDot.style.opacity = '0';
+        cursorRing.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+        cursorDot.style.opacity = '';
+        cursorRing.style.opacity = '';
+    });
+
+    // Primary button radial highlight follow
+    document.querySelectorAll('.btn--primary').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            btn.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width) * 100 + '%');
+            btn.style.setProperty('--my', ((e.clientY - rect.top) / rect.height) * 100 + '%');
+        });
+    });
+
+    // ---------- NAV SCROLL ----------
     const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
+    const onScroll = () => {
         if (window.scrollY > 60) nav.classList.add('is-scrolled');
         else nav.classList.remove('is-scrolled');
+        applyParallax();
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
 
-        // Parallax on hero bg
-        const heroBg = document.querySelector('.hero__bg-image');
-        if (heroBg) {
-            heroBg.style.transform = `translate3d(0, ${window.scrollY * 0.3}px, 0)`;
-        }
-    }, { passive: true });
+    // ---------- PARALLAX ----------
+    const parallaxTargets = [
+        { el: document.querySelector('.location__bg'), speed: 0.2 },
+    ].filter(t => t.el);
 
-    // REVEAL ON SCROLL
+    function applyParallax() {
+        parallaxTargets.forEach(({ el, speed }) => {
+            const rect = el.parentElement.getBoundingClientRect();
+            const inView = rect.bottom > 0 && rect.top < window.innerHeight;
+            if (inView) {
+                const offset = (rect.top * speed) * -1;
+                el.style.transform = `translate3d(0, ${offset}px, 0) scale(1.05)`;
+            }
+        });
+    }
+
+    // ---------- REVEAL ON SCROLL ----------
+    const revealEls = document.querySelectorAll('[data-reveal]');
     const io = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -102,32 +136,9 @@
         });
     }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
 
-    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+    revealEls.forEach(el => io.observe(el));
 
-    // QR GRID PLACEHOLDER
-    const qrGrid = document.getElementById('qrGrid');
-    if (qrGrid) {
-        const cells = 15 * 15;
-        const pattern = [];
-        let seed = 1337;
-        const rand = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
-        for (let i = 0; i < cells; i++) {
-            const row = Math.floor(i / 15);
-            const col = i % 15;
-            if ((row < 4 && col < 4) || (row < 4 && col > 10) || (row > 10 && col < 4)) {
-                pattern.push(false);
-                continue;
-            }
-            pattern.push(rand() > 0.5);
-        }
-        pattern.forEach(filled => {
-            const cell = document.createElement('span');
-            if (!filled) cell.style.background = 'transparent';
-            qrGrid.appendChild(cell);
-        });
-    }
-
-    // SMOOTH SCROLL
+    // ---------- SMOOTH SCROLL ----------
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             const id = link.getAttribute('href');
@@ -135,8 +146,13 @@
             const target = document.querySelector(id);
             if (!target) return;
             e.preventDefault();
-            const top = target.getBoundingClientRect().top + window.scrollY - 80;
+            const offset = 80;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
             window.scrollTo({ top, behavior: 'smooth' });
         });
+    });
+
+    window.addEventListener('load', () => {
+        applyParallax();
     });
 })();
