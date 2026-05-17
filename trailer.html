@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch the Story — the cinematic trailer for Smiley Children. 84 seconds with a family that's forgotten how to listen.">
+    <title>Watch the Story — Smiley Children</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Special+Elite&family=Caveat:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="trailer.css">
+</head>
+<body class="page-trailer">
+
+    <!-- LOADING SCREEN -->
+    <div class="loader" id="loader">
+        <div class="loader__inner">
+            <div class="loader__brand">
+                <span class="loader__sub">Cinematic trailer · 1:24</span>
+                <h1 class="loader__title">
+                    <span class="loader__word">
+                        <span class="loader__char" style="--i:0">W</span>
+                        <span class="loader__char" style="--i:1">a</span>
+                        <span class="loader__char" style="--i:2">t</span>
+                        <span class="loader__char" style="--i:3">c</span>
+                        <span class="loader__char" style="--i:4">h</span>
+                    </span>
+                    <span class="loader__icon" aria-hidden="true">
+                        <img src="assets/logo-icon.png" alt="">
+                    </span>
+                    <span class="loader__word">
+                        <span class="loader__char" style="--i:7">T</span>
+                        <span class="loader__char" style="--i:8">h</span>
+                        <span class="loader__char" style="--i:9">e</span>
+                    </span>
+                    <span class="loader__word">
+                        <span class="loader__char" style="--i:11">S</span>
+                        <span class="loader__char" style="--i:12">t</span>
+                        <span class="loader__char" style="--i:13">o</span>
+                        <span class="loader__char" style="--i:14">r</span>
+                        <span class="loader__char" style="--i:15">y</span>
+                    </span>
+                </h1>
+                <div class="loader__progress">
+                    <div class="loader__progress-bar" id="loaderBar"></div>
+                </div>
+                <div class="loader__status">
+                    <span id="loaderStatus">Loading the projector</span>
+                    <span id="loaderPercent">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor cursor--dot" id="cursorDot"></div>
+    <div class="cursor cursor--ring" id="cursorRing"></div>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <a href="index.html#hero" class="nav__logo" data-cursor="hover">
+            <span class="nav__logo-mark" aria-hidden="true">
+                <img src="assets/logo-icon.png" alt="">
+            </span>
+            <span class="nav__logo-text">Smiley Children</span>
+        </a>
+        <ul class="nav__links">
+            <li><a href="index.html#about" data-cursor="hover">About</a></li>
+            <li><a href="index.html#choose" data-cursor="hover">Characters</a></li>
+            <li><a href="index.html#item" data-cursor="hover">Item</a></li>
+            <li><a href="trailer.html" class="is-active" data-cursor="hover">Trailer</a></li>
+            <li><a href="index.html#location" data-cursor="hover">Location</a></li>
+            <li><a href="index.html#download" data-cursor="hover">Download</a></li>
+        </ul>
+        <a href="https://mdid-howard-lee.github.io/smiley-children/" target="_blank" rel="noopener" class="nav__cta" data-cursor="hover">
+            <span>Play Now</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+    </nav>
+
+    <!-- TRAILER HERO -->
+    <section class="trailer-hero">
+        <div class="trailer-hero__bg">
+            <div class="trailer-hero__texture"></div>
+            <div class="trailer-hero__grain"></div>
+            <div class="trailer-hero__vignette"></div>
+            <div class="trailer-hero__rain"></div>
+        </div>
+
+        <div class="trailer-hero__inner">
+            <div class="trailer-hero__meta">
+                <span class="trailer-hero__meta-line"></span>
+                <span class="trailer-hero__meta-text">Official Cinematic Trailer · 01:24</span>
+            </div>
+
+            <h1 class="trailer-hero__title drip">
+                <span>Watch</span>
+                <span class="accent">the Story.</span>
+            </h1>
+
+            <p class="trailer-hero__tagline">
+                Eighty-four seconds with a family<br>
+                that's forgotten how to listen.
+            </p>
+
+            <div class="trailer-hero__chrome">
+                <div class="trailer-hero__chip"><span class="chip__dot"></span> 1080p HD</div>
+                <div class="trailer-hero__chip"><span class="chip__dot"></span> No spoilers</div>
+                <div class="trailer-hero__chip"><span class="chip__dot"></span> Sound on</div>
+            </div>
+        </div>
+
+        <div class="trailer-hero__scroll" data-cursor="hover">
+            <span>Press play</span>
+            <div class="trailer-hero__scroll-line"><span></span></div>
+        </div>
+    </section>
+
+    <!-- VIDEO PLAYER -->
+    <section class="player" id="player">
+        <div class="section__chrome">
+            <span class="section__number">01</span>
+            <span class="section__label">The Trailer</span>
+        </div>
+
+        <div class="player__wrap" data-reveal="up">
+            <div class="player__frame" id="playerFrame">
+                <video
+                    id="trailerVideo"
+                    class="player__video"
+                    src="assets/smiley-children-trailer.mp4"
+                    preload="metadata"
+                    playsinline
+                    controls
+                    controlslist="nodownload"
+                ></video>
+                <button class="player__poster" id="playerPoster" data-cursor="hover" aria-label="Play trailer">
+                    <span class="player__poster-bg"></span>
+                    <span class="player__poster-overlay"></span>
+                    <span class="player__poster-content">
+                        <span class="player__play-btn" aria-hidden="true">
+                            <svg viewBox="0 0 64 64" fill="none">
+                                <circle cx="32" cy="32" r="30" stroke="rgba(245, 236, 216, 0.5)" stroke-width="1"/>
+                                <circle cx="32" cy="32" r="24" fill="rgba(232, 160, 28, 0.95)"/>
+                                <path d="M27 22 L43 32 L27 42 Z" fill="#0c0a08"/>
+                            </svg>
+                        </span>
+                        <span class="player__poster-label">Play the Trailer</span>
+                        <span class="player__poster-meta">1080p · 01:24 · Stereo</span>
+                    </span>
+                </button>
+                <div class="player__corner player__corner--tl"></div>
+                <div class="player__corner player__corner--tr"></div>
+                <div class="player__corner player__corner--bl"></div>
+                <div class="player__corner player__corner--br"></div>
+            </div>
+
+            <div class="player__tag">
+                <span class="player__tag-num">01</span>
+                <span class="player__tag-text">A trailer for the conversation no one wants to have.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCENE BREAKDOWN -->
+    <section class="scenes" id="scenes">
+        <div class="section__chrome">
+            <span class="section__number">02</span>
+            <span class="section__label">Scene by Scene</span>
+        </div>
+
+        <div class="scenes__head" data-reveal="up">
+            <h2 class="section__title drip">Four moments<br><span class="accent">from one afternoon.</span></h2>
+            <p class="section__sub">The trailer doesn't spoil anything. It just sits at the dinner table with us — and waits to see who speaks first.</p>
+        </div>
+
+        <div class="scenes__grid">
+            <article class="scene" data-reveal="up" data-cursor="hover">
+                <span class="scene__time">00:00</span>
+                <h3 class="scene__title">The Front Door</h3>
+                <p class="scene__desc">A house with the lights on and the curtains drawn. You hear the key turn before you see anyone.</p>
+                <div class="scene__line"></div>
+            </article>
+
+            <article class="scene" data-reveal="up" data-cursor="hover">
+                <span class="scene__time">00:18</span>
+                <h3 class="scene__title">The Choice</h3>
+                <p class="scene__desc">Son or daughter. Singer or artist. The same hallway, two different lives waiting to happen.</p>
+                <div class="scene__line"></div>
+            </article>
+
+            <article class="scene" data-reveal="up" data-cursor="hover">
+                <span class="scene__time">00:42</span>
+                <h3 class="scene__title">The Dinner</h3>
+                <p class="scene__desc">Four chairs. Three voices. One question that keeps getting passed around the table like a serving dish.</p>
+                <div class="scene__line"></div>
+            </article>
+
+            <article class="scene" data-reveal="up" data-cursor="hover">
+                <span class="scene__time">01:11</span>
+                <h3 class="scene__title">The Sentence</h3>
+                <p class="scene__desc">"I want to —" The line you've been rehearsing since you were twelve. The trailer ends just before it.</p>
+                <div class="scene__line"></div>
+            </article>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="trailer-cta" id="cta">
+        <div class="trailer-cta__bg"></div>
+        <div class="trailer-cta__inner" data-reveal="up">
+            <span class="trailer-cta__eyebrow drip">Now playing</span>
+            <h2 class="trailer-cta__title drip">Ready to say<br>the sentence<br><span class="accent">yourself?</span></h2>
+            <p class="trailer-cta__sub">The trailer is the doorway. The game is the conversation behind it.</p>
+            <div class="trailer-cta__buttons">
+                <a href="https://mdid-howard-lee.github.io/smiley-children/" target="_blank" rel="noopener" class="btn btn--primary" data-cursor="hover">
+                    <span class="btn__label">Play the Game</span>
+                    <span class="btn__sub">Free · In Browser</span>
+                    <span class="btn__glow"></span>
+                </a>
+                <a href="index.html#choose" class="btn btn--ghost" data-cursor="hover">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    <span>Choose Your Character</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (minimal) -->
+    <footer class="footer footer--trailer">
+        <div class="footer__bottom">
+            <div class="footer__bottom-left">
+                <a href="index.html" data-cursor="hover" style="color: var(--gold-200); text-decoration: none;">← Back to Smiley Children</a>
+                <span class="footer__divider">·</span>
+                <span class="footer__release">Playable Now · 2026</span>
+            </div>
+            <div class="footer__bottom-right">
+                <a href="https://github.com/mdid-howard-lee/smiley-children" target="_blank" rel="noopener" data-cursor="hover">GitHub</a>
+                <a href="index.html#download" data-cursor="hover">Download</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="trailer.js"></script>
+</body>
+</html>
