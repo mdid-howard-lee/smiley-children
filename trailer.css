@@ -14,12 +14,8 @@
    ============================================= */
 .trailer-hero {
     position: relative;
-    min-height: 60vh;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 140px 6vw 60px;
+    padding: 140px 6vw 80px;
     color: var(--cream-100);
 }
 
@@ -76,7 +72,7 @@
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     opacity: 0;
     animation: fadeUp 1s var(--ease) 0.3s forwards;
 }
@@ -98,10 +94,10 @@
 .trailer-hero__title {
     font-family: var(--font-drip);
     font-weight: 400;
-    font-size: clamp(54px, 9vw, 130px);
-    line-height: 1;
+    font-size: clamp(40px, 6.5vw, 84px);
+    line-height: 1.05;
     letter-spacing: 0.01em;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .trailer-hero__title span {
@@ -123,10 +119,10 @@
 
 .trailer-hero__tagline {
     font-family: var(--font-body);
-    font-size: clamp(16px, 1.6vw, 19px);
+    font-size: clamp(14px, 1.4vw, 17px);
     color: var(--cream-200);
-    line-height: 1.7;
-    margin-bottom: 36px;
+    line-height: 1.6;
+    margin-bottom: 28px;
     opacity: 0;
     animation: fadeUp 1s var(--ease) 1.1s forwards;
 }
@@ -158,7 +154,7 @@
    VIDEO PLAYER
    ============================================= */
 .player {
-    padding: 60px 0 140px;
+    padding: 80px 0 120px;
     background: linear-gradient(180deg, var(--black) 0%, var(--bg-1) 100%);
     position: relative;
 }
