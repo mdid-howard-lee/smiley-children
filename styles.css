@@ -2388,33 +2388,42 @@ button, input { font: inherit; cursor: none; }
    TRAILER PROMO (main page section)
    ============================================= */
 .trailer-promo {
-    padding: 140px 0 160px;
+    padding: 100px 0 110px;
     background: linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
     position: relative;
 }
 
 .trailer-promo .features__head {
     padding: 0 6vw;
-    margin-bottom: 60px;
-    max-width: 900px;
+    margin-bottom: 40px;
+    max-width: 720px;
+}
+
+.trailer-promo .features__head .section__title {
+    font-size: clamp(28px, 3.4vw, 44px);
+}
+
+.trailer-promo .features__head .section__sub {
+    font-size: 14px;
+    margin-top: 16px;
 }
 
 .trailer-promo__card {
     display: block;
     position: relative;
-    max-width: 1280px;
-    margin: 0 6vw;
-    aspect-ratio: 21/9;
+    max-width: 880px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
     background: var(--bg-2);
     border: 1px solid var(--line-strong);
     overflow: hidden;
     transition: transform 0.7s var(--ease), border-color 0.7s var(--ease), box-shadow 0.7s var(--ease);
-    box-shadow: 0 50px 100px -30px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.85);
     text-decoration: none;
 }
 
-@media (min-width: 1400px) {
-    .trailer-promo__card { margin: 0 auto; }
+@media (max-width: 920px) {
+    .trailer-promo__card { margin: 0 6vw; }
 }
 
 .trailer-promo__card:hover {
@@ -2456,8 +2465,8 @@ button, input { font: inherit; cursor: none; }
 /* Cinematic corner brackets */
 .trailer-promo__corner {
     position: absolute;
-    width: 36px;
-    height: 36px;
+    width: 22px;
+    height: 22px;
     border: 2px solid var(--gold-300);
     z-index: 4;
     pointer-events: none;
@@ -2467,7 +2476,7 @@ button, input { font: inherit; cursor: none; }
 .trailer-promo__corner--tr { top: -1px; right: -1px; border-left: 0; border-bottom: 0; }
 .trailer-promo__corner--bl { bottom: -1px; left: -1px; border-right: 0; border-top: 0; }
 .trailer-promo__corner--br { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
-.trailer-promo__card:hover .trailer-promo__corner { width: 48px; height: 48px; }
+.trailer-promo__card:hover .trailer-promo__corner { width: 30px; height: 30px; }
 
 /* Center content */
 .trailer-promo__center {
@@ -2477,20 +2486,20 @@ button, input { font: inherit; cursor: none; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 16px;
     z-index: 3;
-    padding: 60px 6vw 80px;
+    padding: 40px 6vw 60px;
     text-align: center;
 }
 
 .trailer-promo__play {
     position: relative;
-    width: clamp(120px, 14vw, 180px);
-    height: clamp(120px, 14vw, 180px);
+    width: clamp(70px, 8vw, 100px);
+    height: clamp(70px, 8vw, 100px);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .trailer-promo__play svg {
@@ -2525,7 +2534,7 @@ button, input { font: inherit; cursor: none; }
 .trailer-promo__title {
     font-family: var(--font-drip);
     font-weight: 400;
-    font-size: clamp(36px, 5vw, 64px);
+    font-size: clamp(24px, 3vw, 38px);
     line-height: 1;
     color: var(--cream-100);
     letter-spacing: 0.02em;
@@ -2536,27 +2545,27 @@ button, input { font: inherit; cursor: none; }
 
 .trailer-promo__lead {
     font-family: var(--font-body);
-    font-size: clamp(14px, 1.3vw, 17px);
+    font-size: clamp(12px, 1.1vw, 14px);
     color: var(--cream-200);
-    max-width: 540px;
-    line-height: 1.6;
+    max-width: 440px;
+    line-height: 1.55;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 }
 
 /* Bottom bar */
 .trailer-promo__bottom {
     position: absolute;
-    bottom: 24px;
-    left: 28px;
-    right: 28px;
+    bottom: 16px;
+    left: 22px;
+    right: 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 12px;
     z-index: 3;
     font-family: var(--font-body);
-    font-size: 11px;
-    letter-spacing: 0.3em;
+    font-size: 9.5px;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--cream-300);
     pointer-events: none;
@@ -2571,17 +2580,17 @@ button, input { font: inherit; cursor: none; }
 }
 
 .trailer-promo__meta-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: var(--gold-300);
-    box-shadow: 0 0 10px rgba(232, 160, 28, 0.9);
+    box-shadow: 0 0 8px rgba(232, 160, 28, 0.9);
     animation: pulseDot 2s ease-in-out infinite;
 }
 
 .trailer-promo__meta-arrow {
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     border: 1px solid rgba(232, 160, 28, 0.4);
     display: inline-flex;
     align-items: center;
@@ -2590,7 +2599,7 @@ button, input { font: inherit; cursor: none; }
     transition: transform 0.5s var(--ease), background 0.5s var(--ease), border-color 0.5s var(--ease);
 }
 
-.trailer-promo__meta-arrow svg { width: 14px; height: 14px; }
+.trailer-promo__meta-arrow svg { width: 12px; height: 12px; }
 
 .trailer-promo__card:hover .trailer-promo__meta-arrow {
     transform: translateX(6px);
