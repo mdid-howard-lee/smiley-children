@@ -102,6 +102,81 @@
             line-height: 1.7;
         }
 
+        /* COUNTDOWN */
+        .countdown {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 10px;
+            max-width: 760px;
+            margin: 0 auto 36px;
+            flex-wrap: wrap;
+        }
+
+        .countdown__cell {
+            background: rgba(22, 19, 16, 0.55);
+            border: 1px solid var(--line-strong);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 18px 22px 14px;
+            min-width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown__cell::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-300), transparent);
+            opacity: 0.7;
+        }
+
+        .countdown__value {
+            font-family: var(--font-drip);
+            font-weight: 400;
+            font-size: clamp(38px, 5vw, 60px);
+            color: var(--cream-100);
+            line-height: 1;
+            letter-spacing: 0.04em;
+            font-variant-numeric: tabular-nums;
+            text-shadow:
+                0 0 24px rgba(232, 160, 28, 0.35),
+                0 3px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .countdown__label {
+            font-family: var(--font-body);
+            font-size: 10px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold-200);
+        }
+
+        .countdown__sep {
+            font-family: var(--font-drip);
+            font-size: clamp(28px, 4vw, 44px);
+            color: var(--gold-300);
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 700px) {
+            .countdown { gap: 8px; }
+            .countdown__cell { min-width: 72px; padding: 14px 12px 10px; }
+            .countdown__sep { display: none; }
+            .countdown__value { font-size: 34px; }
+        }
+
         /* TIMELINE */
         .timeline {
             position: relative;
@@ -411,6 +486,29 @@
             <span class="release-hero__eyebrow">Official Release Date</span>
             <h1 class="release-hero__title drip">Release<br><span class="accent">Date.</span></h1>
             <p class="release-hero__date">10 <span>·</span> 23 <span>·</span> 2026</p>
+
+            <div class="countdown" id="countdown" aria-label="Countdown to release">
+                <div class="countdown__cell">
+                    <span class="countdown__value" id="cdDays">000</span>
+                    <span class="countdown__label">Days</span>
+                </div>
+                <span class="countdown__sep">:</span>
+                <div class="countdown__cell">
+                    <span class="countdown__value" id="cdHours">00</span>
+                    <span class="countdown__label">Hours</span>
+                </div>
+                <span class="countdown__sep">:</span>
+                <div class="countdown__cell">
+                    <span class="countdown__value" id="cdMinutes">00</span>
+                    <span class="countdown__label">Mins</span>
+                </div>
+                <span class="countdown__sep">:</span>
+                <div class="countdown__cell">
+                    <span class="countdown__value" id="cdSeconds">00</span>
+                    <span class="countdown__label">Secs</span>
+                </div>
+            </div>
+
             <p class="release-hero__sub">
                 Eighteen months of writing toward the same dinner table.
                 Smiley Children opens its front door on October 23, 2026.
@@ -504,7 +602,7 @@
     <section class="release-cta">
         <div class="release-cta__bg"></div>
         <div class="release-cta__inner">
-            <h2 class="release-cta__title drip">163 days to the front door.</h2>
+            <h2 class="release-cta__title drip"><span id="cdDaysInline">—</span> days to the front door.</h2>
             <p class="release-cta__sub">Wishlist now and we'll knock when October 23 arrives.</p>
             <div class="release-cta__buttons">
                 <a href="download.html" target="_blank" rel="noopener" class="btn btn--primary" data-cursor="hover">
@@ -530,5 +628,33 @@
     </button>
 
     <script src="script.js"></script>
+    <script>
+        // Live countdown to the release: Oct 23, 2026 (00:00 local time)
+        (() => {
+            const target = new Date(2026, 9, 23, 0, 0, 0).getTime(); // month is 0-indexed
+            const elD = document.getElementById('cdDays');
+            const elH = document.getElementById('cdHours');
+            const elM = document.getElementById('cdMinutes');
+            const elS = document.getElementById('cdSeconds');
+            const elInline = document.getElementById('cdDaysInline');
+            if (!elD) return;
+
+            function tick() {
+                const diff = Math.max(0, target - Date.now());
+                const d = Math.floor(diff / 86400000);
+                const h = Math.floor((diff % 86400000) / 3600000);
+                const m = Math.floor((diff % 3600000) / 60000);
+                const s = Math.floor((diff % 60000) / 1000);
+                elD.textContent = String(d).padStart(3, '0');
+                elH.textContent = String(h).padStart(2, '0');
+                elM.textContent = String(m).padStart(2, '0');
+                elS.textContent = String(s).padStart(2, '0');
+                if (elInline) elInline.textContent = d;
+            }
+
+            tick();
+            setInterval(tick, 1000);
+        })();
+    </script>
 </body>
 </html>
