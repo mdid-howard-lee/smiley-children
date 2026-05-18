@@ -10,6 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Special+Elite&family=Caveat:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Loader is 2x faster on this page (1300ms vs 2600ms), so
+           pull the status text fade-up earlier so it actually appears
+           before the loader fades out. */
+        .page-download .loader__status {
+            animation-delay: 0.5s !important;
+            animation-duration: 0.5s !important;
+        }
+
+        /* Keep every letter of "Download" on one line — the inline-block
+           chars would otherwise wrap on narrower viewports. */
+        .page-download .loader__title {
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+        .page-download .loader__word {
+            white-space: nowrap;
+        }
+
         /* Local placeholder layout — feel free to replace */
         .download-shell {
             min-height: 100vh;

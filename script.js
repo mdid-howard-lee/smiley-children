@@ -21,7 +21,8 @@
     ];
 
     let progress = 0;
-    const loadDuration = 2600;
+    // Loader runs at half-duration on the download page; default everywhere else.
+    const loadDuration = document.body.classList.contains('page-download') ? 1300 : 2600;
     const startTime = performance.now();
 
     function tickLoader(now) {
