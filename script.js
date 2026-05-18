@@ -167,6 +167,21 @@
         });
     });
 
+    // ---------- BACK TO TOP ----------
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        const updateVisibility = () => {
+            if (window.scrollY > 400) backToTop.classList.add('is-visible');
+            else backToTop.classList.remove('is-visible');
+        };
+        window.addEventListener('scroll', updateVisibility, { passive: true });
+        updateVisibility();
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // ---------- SMOOTH SCROLL ----------
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {

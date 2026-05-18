@@ -2666,3 +2666,117 @@ button, input { font: inherit; cursor: none; }
 
 .choose__grid [data-reveal]:nth-child(1) { transition-delay: 0.05s; }
 .choose__grid [data-reveal]:nth-child(3) { transition-delay: 0.25s; }
+
+/* =============================================
+   BACK TO TOP BUTTON
+   ============================================= */
+.back-to-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 90;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    width: 48px;
+    height: 48px;
+    padding: 0 13px;
+
+    background: rgba(22, 19, 16, 0.65);
+    backdrop-filter: blur(12px) saturate(1.1);
+    -webkit-backdrop-filter: blur(12px) saturate(1.1);
+    border: 1px solid rgba(245, 236, 216, 0.14);
+    color: var(--cream-300);
+
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    cursor: none;
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.45s var(--ease),
+        visibility 0.45s var(--ease),
+        transform 0.5s var(--ease),
+        width 0.55s var(--ease),
+        background 0.4s var(--ease),
+        border-color 0.4s var(--ease),
+        color 0.4s var(--ease),
+        box-shadow 0.5s var(--ease);
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.back-to-top__icon svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s var(--ease);
+}
+
+.back-to-top__label {
+    max-width: 0;
+    opacity: 0;
+    margin-left: 0;
+    overflow: hidden;
+    transition:
+        max-width 0.5s var(--ease),
+        opacity 0.3s var(--ease) 0.1s,
+        margin-left 0.5s var(--ease);
+}
+
+/* Hover: expand into a gold pill */
+.back-to-top:hover {
+    width: 168px;
+    background: var(--gold-300);
+    border-color: var(--gold-300);
+    color: var(--black);
+    box-shadow:
+        0 14px 36px -10px rgba(232, 160, 28, 0.55),
+        0 0 0 4px rgba(232, 160, 28, 0.08);
+}
+
+.back-to-top:hover .back-to-top__icon svg {
+    transform: translateY(-3px);
+}
+
+.back-to-top:hover .back-to-top__label {
+    max-width: 160px;
+    opacity: 1;
+    margin-left: 12px;
+}
+
+@media (max-width: 600px) {
+    .back-to-top { bottom: 18px; right: 18px; }
+    .back-to-top:hover { width: 148px; }
+}
+
+@media (hover: none) {
+    /* Touch devices — no hover, keep it as just an icon button */
+    .back-to-top { cursor: pointer; }
+    .back-to-top:active {
+        background: var(--gold-300);
+        border-color: var(--gold-300);
+        color: var(--black);
+    }
+}
