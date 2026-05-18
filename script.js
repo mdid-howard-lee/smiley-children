@@ -138,6 +138,35 @@
 
     revealEls.forEach(el => io.observe(el));
 
+    // ---------- INLINE TRAILER (main page) ----------
+    const mainPoster = document.getElementById('mainTrailerPoster');
+    const mainVideo = document.getElementById('mainTrailerVideo');
+
+    if (mainPoster && mainVideo) {
+        mainPoster.addEventListener('click', () => {
+            mainPoster.classList.add('is-hidden');
+            mainVideo.play().catch(err => {
+                console.warn('Trailer play failed:', err);
+                mainPoster.classList.remove('is-hidden');
+            });
+        });
+        mainVideo.addEventListener('ended', () => {
+            mainPoster.classList.remove('is-hidden');
+        });
+    }
+
+    // Playback speed buttons
+    const speedBtns = document.querySelectorAll('.speed-btn');
+    speedBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const rate = parseFloat(btn.dataset.speed);
+            if (!mainVideo || isNaN(rate)) return;
+            mainVideo.playbackRate = rate;
+            speedBtns.forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+        });
+    });
+
     // ---------- SMOOTH SCROLL ----------
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {

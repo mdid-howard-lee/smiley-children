@@ -68,7 +68,7 @@
             <li><a href="#choose" data-cursor="hover">Characters</a></li>
             <li><a href="#item" data-cursor="hover">Item</a></li>
             <li><a href="#demo" data-cursor="hover">Demo</a></li>
-            <li><a href="trailer.html" data-cursor="hover">Trailer</a></li>
+            <li><a href="#trailer-promo" data-cursor="hover">Trailer</a></li>
             <li><a href="#location" data-cursor="hover">Location</a></li>
             <li><a href="#download" data-cursor="hover">Download</a></li>
         </ul>
@@ -111,7 +111,7 @@
                     <span class="btn__sub">Free · In Browser</span>
                     <span class="btn__glow"></span>
                 </a>
-                <a href="trailer.html" class="btn btn--ghost" data-cursor="hover">
+                <a href="#trailer-promo" class="btn btn--ghost" data-cursor="hover">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
                     <span>Watch Trailer</span>
                 </a>
@@ -488,42 +488,68 @@
             <p class="section__sub">Eighty-four seconds with the people you're about to play with. One trailer, four moments, no spoilers.</p>
         </div>
 
-        <a href="trailer.html" class="trailer-promo__card" data-reveal="up" data-cursor="hover">
-            <div class="trailer-promo__bg"></div>
-            <div class="trailer-promo__grain"></div>
-            <div class="trailer-promo__vignette"></div>
-
-            <span class="trailer-promo__corner trailer-promo__corner--tl"></span>
-            <span class="trailer-promo__corner trailer-promo__corner--tr"></span>
-            <span class="trailer-promo__corner trailer-promo__corner--bl"></span>
-            <span class="trailer-promo__corner trailer-promo__corner--br"></span>
-
-            <div class="trailer-promo__center">
-                <div class="trailer-promo__play" aria-hidden="true">
-                    <span class="trailer-promo__play-ring"></span>
-                    <span class="trailer-promo__play-ring trailer-promo__play-ring--2"></span>
-                    <svg viewBox="0 0 100 100" fill="none">
-                        <circle cx="50" cy="50" r="44" fill="rgba(232, 160, 28, 0.95)"/>
-                        <path d="M42 32 L68 50 L42 68 Z" fill="#0c0a08"/>
-                    </svg>
-                </div>
-                <h3 class="trailer-promo__title drip">Watch the Trailer</h3>
-                <p class="trailer-promo__lead">Eighty-four seconds with a family that's forgotten how to listen.</p>
+        <div class="trailer-promo__wrap" data-reveal="up">
+            <!-- Top meta chips -->
+            <div class="trailer-promo__chips trailer-promo__chips--top">
+                <span class="tp-chip"><span class="tp-chip__dot"></span> Official Cinematic Trailer</span>
+                <span class="tp-chip">01:24</span>
             </div>
 
-            <div class="trailer-promo__bottom">
-                <span class="trailer-promo__meta-label">Official cinematic trailer</span>
-                <span class="trailer-promo__meta-runtime">
-                    <span class="trailer-promo__meta-dot"></span>
-                    01:24 · 1080p · Sound on
-                </span>
-                <span class="trailer-promo__meta-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M5 12h14M13 6l6 6-6 6"/>
-                    </svg>
-                </span>
+            <!-- Player frame -->
+            <div class="trailer-promo__frame" id="trailerFrame">
+                <video
+                    id="mainTrailerVideo"
+                    class="trailer-promo__video"
+                    src="assets/smiley-children-trailer.mp4"
+                    preload="metadata"
+                    playsinline
+                    controls
+                    controlslist="nodownload"
+                ></video>
+
+                <button class="trailer-promo__poster" id="mainTrailerPoster" data-cursor="hover" aria-label="Play trailer">
+                    <span class="trailer-promo__poster-bg"></span>
+                    <span class="trailer-promo__poster-grain"></span>
+                    <span class="trailer-promo__poster-content">
+                        <span class="trailer-promo__play" aria-hidden="true">
+                            <span class="trailer-promo__play-ring"></span>
+                            <span class="trailer-promo__play-ring trailer-promo__play-ring--2"></span>
+                            <svg viewBox="0 0 100 100" fill="none">
+                                <circle cx="50" cy="50" r="44" fill="rgba(232, 160, 28, 0.95)"/>
+                                <path d="M42 32 L68 50 L42 68 Z" fill="#0c0a08"/>
+                            </svg>
+                        </span>
+                        <span class="trailer-promo__poster-label">Play the Trailer</span>
+                        <span class="trailer-promo__poster-meta">Click anywhere · Sound on</span>
+                    </span>
+                </button>
+
+                <span class="trailer-promo__corner trailer-promo__corner--tl"></span>
+                <span class="trailer-promo__corner trailer-promo__corner--tr"></span>
+                <span class="trailer-promo__corner trailer-promo__corner--bl"></span>
+                <span class="trailer-promo__corner trailer-promo__corner--br"></span>
             </div>
-        </a>
+
+            <!-- Bottom meta chips -->
+            <div class="trailer-promo__chips trailer-promo__chips--bottom">
+                <span class="tp-chip"><span class="tp-chip__dot"></span> 1080p HD</span>
+                <span class="tp-chip">No Spoilers</span>
+                <span class="tp-chip">Sound on</span>
+                <span class="tp-chip">Stereo</span>
+            </div>
+
+            <!-- Playback speed selector -->
+            <div class="trailer-promo__speed" role="group" aria-label="Playback speed">
+                <span class="trailer-promo__speed-label">Speed</span>
+                <button class="speed-btn" data-speed="0.5" data-cursor="hover">0.5×</button>
+                <button class="speed-btn" data-speed="0.75" data-cursor="hover">0.75×</button>
+                <button class="speed-btn is-active" data-speed="1" data-cursor="hover">1×</button>
+                <button class="speed-btn" data-speed="1.25" data-cursor="hover">1.25×</button>
+                <button class="speed-btn" data-speed="1.5" data-cursor="hover">1.5×</button>
+                <button class="speed-btn" data-speed="2" data-cursor="hover">2×</button>
+                <span class="trailer-promo__speed-hint">Volume &amp; fullscreen in the player controls</span>
+            </div>
+        </div>
     </section>
 
     <!-- LOCATION -->
