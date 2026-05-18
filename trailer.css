@@ -2,12 +2,8 @@
    SMILEY CHILDREN — Trailer page
    ============================================= */
 
-.page-trailer .nav__links a.is-active {
-    color: var(--gold-100);
-}
-.page-trailer .nav__links a.is-active::after {
-    width: 100%;
-}
+/* (Active nav-link styling moved to styles.css so it works
+   on all subpages without each loading trailer.css.) */
 
 /* =============================================
    TRAILER HERO
