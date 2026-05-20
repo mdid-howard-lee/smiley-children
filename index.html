@@ -68,6 +68,7 @@
             <li><a href="#choose" data-cursor="hover">Characters</a></li>
             <li><a href="#item" data-cursor="hover">Item</a></li>
             <li><a href="#demo" data-cursor="hover">Demo</a></li>
+            <li><a href="#showcase" data-cursor="hover">Try It</a></li>
             <li><a href="#trailer-promo" data-cursor="hover">Trailer</a></li>
             <li><a href="#location" data-cursor="hover">Location</a></li>
             <li><a href="#cast" data-cursor="hover">Family</a></li>
@@ -476,10 +477,103 @@
         </div>
     </section>
 
+    <!-- INTERACTIVE SHOWCASE -->
+    <section class="showcase" id="showcase">
+        <div class="section__chrome">
+            <span class="section__number">05</span>
+            <span class="section__label">Try It</span>
+        </div>
+
+        <div class="features__head" data-reveal="up">
+            <h2 class="section__title drip">Try the<br><span class="accent">conversation.</span></h2>
+            <p class="section__sub">A single scene from Chapter 04. Three choices laid out in the family's dialogue UI. Coming next: pick one and see what the house does.</p>
+        </div>
+
+        <div class="showcase__wrap" data-reveal="up">
+            <div class="showcase__frame">
+
+                <!-- Scene (default state) -->
+                <div class="showcase__scene" id="showcaseScene">
+                    <div class="showcase__bg" style="background-image: url('assets/demo-quest.png');"></div>
+                    <div class="showcase__bg-overlay"></div>
+
+                    <!-- Top HUD: scene marker + Smiley Coin counter -->
+                    <div class="showcase__hud">
+                        <div class="showcase__hud-left">
+                            <span class="showcase__hud-dot"></span>
+                            <span>Scene 04 / 17 · The Sketchbook</span>
+                        </div>
+                        <div class="showcase__hud-right">
+                            <img src="assets/coin.png" alt="Smiley Coin" class="showcase__hud-coin">
+                            <span class="showcase__hud-count" id="showcaseCoins">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Dialogue card -->
+                    <div class="showcase__dialog">
+                        <span class="showcase__speaker">Father</span>
+                        <p class="showcase__line">"Your mother told me about the sketches. You can't keep doing this."</p>
+                    </div>
+
+                    <!-- Choices -->
+                    <div class="showcase__choices">
+                        <button class="showcase__choice" data-choice="wrong" data-cursor="hover">
+                            <span class="showcase__choice-num">A</span>
+                            <span class="showcase__choice-text">Burn it. I'll do whatever you want.</span>
+                        </button>
+                        <button class="showcase__choice" data-choice="wrong" data-cursor="hover">
+                            <span class="showcase__choice-num">B</span>
+                            <span class="showcase__choice-text">I'll do it anyway. You can't stop me.</span>
+                        </button>
+                        <button class="showcase__choice" data-choice="correct" data-cursor="hover">
+                            <span class="showcase__choice-num">C</span>
+                            <span class="showcase__choice-text">I hear you. Can we talk about it tonight?</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Success overlay -->
+                <div class="showcase__result showcase__result--success" id="showcaseSuccess" aria-hidden="true">
+                    <div class="showcase__coin-spin">
+                        <img src="assets/coin.png" alt="">
+                    </div>
+                    <span class="showcase__plus">+5 Smiley Coins</span>
+                    <h3 class="drip">Honest. Brave. Heard.</h3>
+                    <p>You didn't lie and you didn't run. You bought a sentence — and that's how trust starts.</p>
+                    <button class="showcase__retry" id="showcaseRetrySuccess" data-cursor="hover">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/></svg>
+                        <span>Play it again</span>
+                    </button>
+                </div>
+
+                <!-- Wrong overlay -->
+                <div class="showcase__result showcase__result--wrong" id="showcaseWrong" aria-hidden="true">
+                    <div class="showcase__wrong-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+                    </div>
+                    <h3 class="drip">The room goes quiet.</h3>
+                    <p>That answer cost more than it bought. The conversation closes — and the dream goes back in the drawer. Please try again.</p>
+                    <button class="showcase__retry" id="showcaseRetryWrong" data-cursor="hover">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/></svg>
+                        <span>Try again</span>
+                    </button>
+                </div>
+
+                <!-- Cinematic corner brackets -->
+                <span class="showcase__corner showcase__corner--tl"></span>
+                <span class="showcase__corner showcase__corner--tr"></span>
+                <span class="showcase__corner showcase__corner--bl"></span>
+                <span class="showcase__corner showcase__corner--br"></span>
+            </div>
+
+            <p class="showcase__hint">Every choice changes how the family hears you. Pick honestly.</p>
+        </div>
+    </section>
+
     <!-- TRAILER PROMO -->
     <section class="trailer-promo" id="trailer-promo">
         <div class="section__chrome">
-            <span class="section__number">05</span>
+            <span class="section__number">06</span>
             <span class="section__label">Trailer</span>
         </div>
 
@@ -558,7 +652,7 @@
         <div class="location__overlay"></div>
 
         <div class="section__chrome section__chrome--light">
-            <span class="section__number">06</span>
+            <span class="section__number">07</span>
             <span class="section__label">Location</span>
         </div>
 
@@ -603,7 +697,7 @@
     <!-- CAST -->
     <section class="cast" id="cast">
         <div class="section__chrome">
-            <span class="section__number">07</span>
+            <span class="section__number">08</span>
             <span class="section__label">The Family</span>
         </div>
 
