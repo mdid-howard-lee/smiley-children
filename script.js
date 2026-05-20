@@ -168,6 +168,48 @@
         });
     });
 
+    // ---------- INTERACTIVE SHOWCASE (Try It section) ----------
+    const showcaseScene = document.getElementById('showcaseScene');
+    const showcaseSuccess = document.getElementById('showcaseSuccess');
+    const showcaseWrong = document.getElementById('showcaseWrong');
+    const showcaseCoins = document.getElementById('showcaseCoins');
+    const showcaseChoices = document.querySelectorAll('.showcase__choice');
+    const showcaseRetries = document.querySelectorAll('.showcase__retry');
+
+    if (showcaseScene && showcaseSuccess && showcaseWrong) {
+        let coins = 0;
+
+        function showResult(overlay) {
+            showcaseScene.classList.add('is-hidden');
+            overlay.classList.add('is-active');
+            overlay.setAttribute('aria-hidden', 'false');
+        }
+
+        function resetScene() {
+            showcaseSuccess.classList.remove('is-active');
+            showcaseWrong.classList.remove('is-active');
+            showcaseSuccess.setAttribute('aria-hidden', 'true');
+            showcaseWrong.setAttribute('aria-hidden', 'true');
+            showcaseScene.classList.remove('is-hidden');
+        }
+
+        showcaseChoices.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.dataset.choice === 'correct') {
+                    coins += 5;
+                    if (showcaseCoins) showcaseCoins.textContent = coins;
+                    showResult(showcaseSuccess);
+                } else {
+                    showResult(showcaseWrong);
+                }
+            });
+        });
+
+        showcaseRetries.forEach(btn => {
+            btn.addEventListener('click', resetScene);
+        });
+    }
+
     // ---------- BACK TO TOP ----------
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
