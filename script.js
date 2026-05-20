@@ -173,27 +173,143 @@
     const showcaseSuccess = document.getElementById('showcaseSuccess');
     const showcaseWrong = document.getElementById('showcaseWrong');
     const showcaseCoins = document.getElementById('showcaseCoins');
-    const showcaseChoices = document.querySelectorAll('.showcase__choice');
-    const showcaseRetries = document.querySelectorAll('.showcase__retry');
+    const showcaseBg = document.getElementById('showcaseBg');
+    const showcaseSceneLabel = document.getElementById('showcaseSceneLabel');
+    const showcaseSpeaker = document.getElementById('showcaseSpeaker');
+    const showcaseLine = document.getElementById('showcaseLine');
+    const showcaseChoiceBtns = document.querySelectorAll('#showcaseChoices .showcase__choice');
+    const showcaseSuccessHeadline = document.getElementById('showcaseSuccessHeadline');
+    const showcaseSuccessBody = document.getElementById('showcaseSuccessBody');
+    const showcaseRetryLabel = document.getElementById('showcaseRetryLabel');
+    const showcaseRetrySuccess = document.getElementById('showcaseRetrySuccess');
+    const showcaseRetryWrong = document.getElementById('showcaseRetryWrong');
+    const showcaseProgressDots = document.querySelectorAll('#showcaseProgress .showcase__progress-dot');
+
+    const showcaseScenes = [
+        {
+            sceneLabel: 'Scene 04 / 17 · The Sketchbook',
+            background: 'assets/demo-quest.png',
+            speaker: 'Father',
+            line: '"Your mother told me about the sketches. You can\'t keep doing this."',
+            choices: [
+                { letter: 'A', text: "Burn it. I'll do whatever you want.", correct: false },
+                { letter: 'B', text: "I'll do it anyway. You can't stop me.", correct: false },
+                { letter: 'C', text: "I hear you. Can we talk about it tonight?", correct: true },
+            ],
+            headline: 'Honest. Brave. Heard.',
+            body: "You didn't lie and you didn't run. You bought a sentence — and that's how trust starts.",
+        },
+        {
+            sceneLabel: 'Scene 07 / 17 · The Dinner',
+            background: 'assets/location.png',
+            speaker: 'Mother',
+            line: "\"Sit down. We're eating. Don't look at me like that.\"",
+            choices: [
+                { letter: 'A', text: "I'm not hungry. I'll be in my room.", correct: false },
+                { letter: 'B', text: "Fine. I'll smile and chew.", correct: false },
+                { letter: 'C', text: "I'll sit. Can I tell you about my day?", correct: true },
+            ],
+            headline: 'A meal becomes a conversation.',
+            body: "You stayed at the table. You opened a door instead of closing one.",
+        },
+        {
+            sceneLabel: 'Scene 09 / 17 · The Bus Stop',
+            background: 'assets/demo-quest.png',
+            speaker: 'Jamie',
+            line: "\"You're skipping dinner again, aren't you? You can't just disappear from your own life.\"",
+            choices: [
+                { letter: 'A', text: "I'm fine. Leave it.", correct: false },
+                { letter: 'B', text: "It's complicated. You wouldn't get it.", correct: false },
+                { letter: 'C', text: "I don't know what to say to them anymore.", correct: true },
+            ],
+            headline: 'Honesty between friends.',
+            body: "Naming the thing you can't name to your parents — that's how you find the words later.",
+        },
+        {
+            sceneLabel: 'Scene 12 / 17 · The Locked Door',
+            background: 'assets/location.png',
+            speaker: 'Father',
+            line: "\"I knocked twice. You didn't answer. I'm coming in.\"",
+            choices: [
+                { letter: 'A', text: "Then please leave.", correct: false },
+                { letter: 'B', text: "Fine, sit down, whatever.", correct: false },
+                { letter: 'C', text: "I'm here. I was just listening to something.", correct: true },
+            ],
+            headline: 'The door, slightly open.',
+            body: "You let him in. The room is smaller now, but warmer.",
+        },
+        {
+            sceneLabel: 'Scene 16 / 17 · The Sentence',
+            background: 'assets/demo-quest.png',
+            speaker: 'Mother',
+            line: "\"Whatever you're about to say — say it. We're listening this time.\"",
+            choices: [
+                { letter: 'A', text: "Forget it. It's nothing.", correct: false },
+                { letter: 'B', text: "I think I want to leave home next year.", correct: false },
+                { letter: 'C', text: "I want to be an artist. I'm telling you what's true.", correct: true },
+            ],
+            headline: 'The sentence said.',
+            body: "Sixteen scenes of practice. One sentence. They heard you — all the way through.",
+            isFinal: true,
+        },
+    ];
+
+    let currentSceneIdx = 0;
+    let coins = 0;
+
+    function renderScene(idx) {
+        const s = showcaseScenes[idx];
+        if (!s) return;
+
+        if (showcaseBg) showcaseBg.style.backgroundImage = `url('${s.background}')`;
+        if (showcaseSceneLabel) showcaseSceneLabel.textContent = s.sceneLabel;
+        if (showcaseSpeaker) showcaseSpeaker.textContent = s.speaker;
+        if (showcaseLine) showcaseLine.textContent = s.line;
+
+        showcaseChoiceBtns.forEach((btn, i) => {
+            const c = s.choices[i];
+            if (!c) return;
+            const numEl = btn.querySelector('.showcase__choice-num');
+            const textEl = btn.querySelector('.showcase__choice-text');
+            if (numEl) numEl.textContent = c.letter;
+            if (textEl) textEl.textContent = c.text;
+            btn.dataset.choice = c.correct ? 'correct' : 'wrong';
+        });
+
+        if (showcaseSuccessHeadline) showcaseSuccessHeadline.textContent = s.headline;
+        if (showcaseSuccessBody) showcaseSuccessBody.textContent = s.body;
+        if (showcaseRetryLabel) showcaseRetryLabel.textContent = s.isFinal ? 'Start over' : 'Next scene';
+
+        showcaseProgressDots.forEach((dot, i) => {
+            dot.classList.remove('is-active', 'is-done');
+            if (i < idx) dot.classList.add('is-done');
+            else if (i === idx) dot.classList.add('is-active');
+        });
+    }
+
+    function showResult(overlay) {
+        if (!overlay) return;
+        showcaseScene.classList.add('is-hidden');
+        overlay.classList.add('is-active');
+        overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    function hideOverlays() {
+        if (showcaseSuccess) {
+            showcaseSuccess.classList.remove('is-active');
+            showcaseSuccess.setAttribute('aria-hidden', 'true');
+        }
+        if (showcaseWrong) {
+            showcaseWrong.classList.remove('is-active');
+            showcaseWrong.setAttribute('aria-hidden', 'true');
+        }
+        if (showcaseScene) showcaseScene.classList.remove('is-hidden');
+    }
 
     if (showcaseScene && showcaseSuccess && showcaseWrong) {
-        let coins = 0;
+        renderScene(currentSceneIdx);
 
-        function showResult(overlay) {
-            showcaseScene.classList.add('is-hidden');
-            overlay.classList.add('is-active');
-            overlay.setAttribute('aria-hidden', 'false');
-        }
-
-        function resetScene() {
-            showcaseSuccess.classList.remove('is-active');
-            showcaseWrong.classList.remove('is-active');
-            showcaseSuccess.setAttribute('aria-hidden', 'true');
-            showcaseWrong.setAttribute('aria-hidden', 'true');
-            showcaseScene.classList.remove('is-hidden');
-        }
-
-        showcaseChoices.forEach(btn => {
+        showcaseChoiceBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 if (btn.dataset.choice === 'correct') {
                     coins += 5;
@@ -205,9 +321,17 @@
             });
         });
 
-        showcaseRetries.forEach(btn => {
-            btn.addEventListener('click', resetScene);
-        });
+        if (showcaseRetrySuccess) {
+            showcaseRetrySuccess.addEventListener('click', () => {
+                currentSceneIdx = (currentSceneIdx + 1) % showcaseScenes.length;
+                renderScene(currentSceneIdx);
+                hideOverlays();
+            });
+        }
+
+        if (showcaseRetryWrong) {
+            showcaseRetryWrong.addEventListener('click', hideOverlays);
+        }
     }
 
     // ---------- BACK TO TOP ----------

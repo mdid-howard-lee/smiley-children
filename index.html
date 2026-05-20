@@ -494,14 +494,14 @@
 
                 <!-- Scene (default state) -->
                 <div class="showcase__scene" id="showcaseScene">
-                    <div class="showcase__bg" style="background-image: url('assets/demo-quest.png');"></div>
+                    <div class="showcase__bg" id="showcaseBg" style="background-image: url('assets/demo-quest.png');"></div>
                     <div class="showcase__bg-overlay"></div>
 
                     <!-- Top HUD: scene marker + Smiley Coin counter -->
                     <div class="showcase__hud">
                         <div class="showcase__hud-left">
                             <span class="showcase__hud-dot"></span>
-                            <span>Scene 04 / 17 · The Sketchbook</span>
+                            <span id="showcaseSceneLabel">Scene 04 / 17 · The Sketchbook</span>
                         </div>
                         <div class="showcase__hud-right">
                             <img src="assets/coin.png" alt="Smiley Coin" class="showcase__hud-coin">
@@ -509,14 +509,23 @@
                         </div>
                     </div>
 
+                    <!-- Progress dots (5 scenes) -->
+                    <div class="showcase__progress" id="showcaseProgress" aria-hidden="true">
+                        <span class="showcase__progress-dot is-active"></span>
+                        <span class="showcase__progress-dot"></span>
+                        <span class="showcase__progress-dot"></span>
+                        <span class="showcase__progress-dot"></span>
+                        <span class="showcase__progress-dot"></span>
+                    </div>
+
                     <!-- Dialogue card -->
                     <div class="showcase__dialog">
-                        <span class="showcase__speaker">Father</span>
-                        <p class="showcase__line">"Your mother told me about the sketches. You can't keep doing this."</p>
+                        <span class="showcase__speaker" id="showcaseSpeaker">Father</span>
+                        <p class="showcase__line" id="showcaseLine">"Your mother told me about the sketches. You can't keep doing this."</p>
                     </div>
 
                     <!-- Choices -->
-                    <div class="showcase__choices">
+                    <div class="showcase__choices" id="showcaseChoices">
                         <button class="showcase__choice" data-choice="wrong" data-cursor="hover">
                             <span class="showcase__choice-num">A</span>
                             <span class="showcase__choice-text">Burn it. I'll do whatever you want.</span>
@@ -538,11 +547,11 @@
                         <img src="assets/coin.png" alt="">
                     </div>
                     <span class="showcase__plus">+5 Smiley Coins</span>
-                    <h3 class="drip">Honest. Brave. Heard.</h3>
-                    <p>You didn't lie and you didn't run. You bought a sentence — and that's how trust starts.</p>
+                    <h3 class="drip" id="showcaseSuccessHeadline">Honest. Brave. Heard.</h3>
+                    <p id="showcaseSuccessBody">You didn't lie and you didn't run. You bought a sentence — and that's how trust starts.</p>
                     <button class="showcase__retry" id="showcaseRetrySuccess" data-cursor="hover">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/></svg>
-                        <span>Play it again</span>
+                        <span id="showcaseRetryLabel">Next scene</span>
                     </button>
                 </div>
 

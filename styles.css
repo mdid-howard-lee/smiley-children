@@ -2822,6 +2822,39 @@ button, input { font: inherit; cursor: none; }
     line-height: 1;
 }
 
+/* Progress dots — center top */
+.showcase__progress {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.showcase__progress-dot {
+    width: 22px;
+    height: 2px;
+    background: rgba(245, 236, 216, 0.18);
+    transition: background 0.4s var(--ease);
+}
+
+.showcase__progress-dot.is-done {
+    background: var(--gold-300);
+    box-shadow: 0 0 6px rgba(232, 160, 28, 0.7);
+}
+
+.showcase__progress-dot.is-active {
+    background: var(--gold-100);
+    box-shadow: 0 0 8px rgba(232, 160, 28, 0.9);
+}
+
+@media (max-width: 700px) {
+    .showcase__progress { top: 56px; }
+}
+
 .showcase__dialog {
     position: absolute;
     bottom: 110px;
